@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MOVE4WELLNESS</string>
+    <string name="move4wellness">MOVE<font color="#9B6FF1">4</font>WELLNESS</string>
+    <string name="register">Register</string>
+</resources>
