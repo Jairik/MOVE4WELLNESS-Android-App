@@ -27,15 +27,14 @@
         android:layout_marginStart="56dp"
         android:layout_marginTop="150dp"
         android:layout_marginEnd="56dp"
-        android:layout_marginBottom="169dp"
         android:background="@drawable/rounded_button_drawable"
         android:text="@string/register"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.711" />
 
     <Button
         android:id="@+id/Home_Sign_In"
@@ -44,15 +43,14 @@
         android:layout_marginStart="56dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="56dp"
-        android:layout_marginBottom="96dp"
+        android:layout_marginBottom="72dp"
         android:background="@drawable/rounded_button_drawable"
         android:text="@string/sign_in"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Register" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
