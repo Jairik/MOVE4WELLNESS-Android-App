@@ -3,4 +3,10 @@
     <string name="move4wellness">MOVE<font color="#9B6FF1">4</font>WELLNESS</string>
     <string name="register">Register</string>
     <string name="sign_in">Sign In</string>
+    <string name="create_an_account">Create an Account</string>
+    <string name="hey_there">Hey there,</string>
+    <string name="full_name">Full Name</string>
+    <string name="email_optional">Email (Optional)</string>
+    <string name="phone_number_optional">Phone Number (Optional)</string>
+    <string name="password">Password</string>
 </resources>
