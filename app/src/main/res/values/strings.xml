@@ -9,4 +9,8 @@
     <string name="email_optional">Email (Optional)</string>
     <string name="phone_number_optional">Phone Number (Optional)</string>
     <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="username_email_phoneNumber">Username/Email/Phone-Number</string>
+    <string name="Welcome_Back">Welcome Back!</string>
+    <string name="HELLO_TEXT">Hello,</string>
 </resources>
