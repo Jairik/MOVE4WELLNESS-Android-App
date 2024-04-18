@@ -1,4 +1,4 @@
-package com.example.move4wellness_android_app;
+package com.example.move4wellness;
 
 import org.junit.Test;
 

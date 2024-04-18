@@ -1,4 +1,4 @@
-package com.example.move4wellness_android_app;
+package com.example.move4wellness;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.example.move4wellness_android_app", appContext.getPackageName());
+        assertEquals("com.example.move4wellness", appContext.getPackageName());
     }
 }

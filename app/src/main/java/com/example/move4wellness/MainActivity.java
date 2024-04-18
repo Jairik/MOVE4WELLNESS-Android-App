@@ -1,4 +1,11 @@
-package com.example.move4wellness_android_app;
+package com.example.move4wellness;
+
+/*Authors: JJ McCauley & Will Lamuth
+* Creation Date: 4/2/24
+* Last Update: 4/9/24
+* Notes: */
+
+//Could act as the Controller for now
 
 import android.os.Bundle;
 

@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.move4wellness_android_app"
+    namespace = "com.example.move4wellness"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.move4wellness_android_app"
+        applicationId = "com.example.move4wellness"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

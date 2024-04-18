@@ -5,5 +5,5 @@
     <corners android:radius="500dp" /> <!-- Set the desired corner radius -->
 </shape>
 
-<!-- This holds the drawable file for the purple button that will be used
- throughout the program -->
+    <!-- This holds the drawable file for the purple button that will be used
+     throughout the program. Is very open to expansion -->
