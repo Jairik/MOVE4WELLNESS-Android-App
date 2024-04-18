@@ -5,8 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!-- Top text for visual appeal -->
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/MANAGERS_EDITION"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="23dp"
@@ -14,7 +15,7 @@
         android:layout_marginEnd="277dp"
         android:layout_marginBottom="696dp"
         android:fontFamily="@font/poppins_extrabold"
-        android:text="Manager's Edition"
+        android:text="@string/manager_s_edition"
         android:textColor="@color/purple"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -23,5 +24,195 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
+
+    <!-- Shwocasing this week's total -->
+    <TextView
+        android:id="@+id/week_Total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="200dp"
+        android:layout_marginEnd="201dp"
+        android:layout_marginBottom="548dp"
+        android:fontFamily="@font/poppins"
+        android:text="-"
+        android:textColor="@color/purple"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/WEEK_TOTAL" />
+    <TextView
+        android:id="@+id/WEEK_TOTAL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="140dp"
+        android:layout_marginEnd="140dp"
+        android:layout_marginBottom="583dp"
+        android:fontFamily="@font/poppins_extrabold"
+        android:text="@string/this_week_s_total"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Showcasing this week's average -->
+    <TextView
+        android:id="@+id/week_Average"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="200dp"
+        android:layout_marginEnd="201dp"
+        android:fontFamily="@font/poppins"
+        android:text="-"
+        android:textColor="@color/purple"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/WEEK_TOTAL"
+        app:layout_constraintVertical_bias="0.13" />
+    <TextView
+        android:id="@+id/WEEK_AVERAGE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="140dp"
+        android:layout_marginEnd="140dp"
+        android:layout_marginBottom="512dp"
+        android:fontFamily="@font/poppins_extrabold"
+        android:text="@string/this_week_s_average"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Showcasing the all-time total -->
+    <TextView
+        android:id="@+id/all_Time_Total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="200dp"
+        android:layout_marginEnd="201dp"
+        android:fontFamily="@font/poppins"
+        android:text="-"
+        android:textColor="@color/purple"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/WEEK_TOTAL"
+        app:layout_constraintVertical_bias="0.26" />
+    <TextView
+        android:id="@+id/ALL_TIME_TOTAL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="140dp"
+        android:layout_marginEnd="140dp"
+        android:layout_marginBottom="440dp"
+        android:fontFamily="@font/poppins_extrabold"
+        android:text="@string/all_time_total"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Showcasing the all time average -->
+    <TextView
+        android:id="@+id/all_Time_Average"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="200dp"
+        android:layout_marginEnd="201dp"
+        android:fontFamily="@font/poppins"
+        android:text="-"
+        android:textColor="@color/purple"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/WEEK_TOTAL"
+        app:layout_constraintVertical_bias="0.389" />
+    <TextView
+        android:id="@+id/ALL_TIME_AVERAGE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="140dp"
+        android:layout_marginEnd="140dp"
+        android:layout_marginBottom="368dp"
+        android:fontFamily="@font/poppins_extrabold"
+        android:text="@string/all_time_average"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Showcasing the total number of users in the database -->
+    <TextView
+        android:id="@+id/TOTAL_USERS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="106dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="34dp"
+        android:layout_marginBottom="684dp"
+        android:fontFamily="@font/poppins_extrabold"
+        android:text="@string/total_users"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/MANAGERS_EDITION"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/total_Users"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="314dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="85dp"
+        android:layout_marginBottom="660dp"
+        android:fontFamily="@font/poppins"
+        android:text="-"
+        android:textColor="@color/purple"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TOTAL_USERS" />
+
+    <!-- Making a button that swaps to the "search user" activity -->
+    <Button
+        android:id="@+id/search_User"
+        android:layout_width="195dp"
+        android:layout_height="70dp"
+        android:text="@string/search_user"
+        tools:layout_editor_absoluteX="108dp"
+        tools:layout_editor_absoluteY="426dp" />
+
+    <!-- Making a button that swaps to the "all users" activity, which shows
+     all users in a sample list-like format -->
+    <Button
+        android:id="@+id/all_Users"
+        android:layout_width="195dp"
+        android:layout_height="70dp"
+        android:text="@string/all_users"
+        tools:layout_editor_absoluteX="108dp"
+        tools:layout_editor_absoluteY="506dp" />
+
+    <!-- Making a button that swaps to the "send global message" activity, which
+     allows for managers accounts to craft a message to send to everybody -->
+    <Button
+        android:id="@+id/send_Global_Message"
+        android:layout_width="195dp"
+        android:layout_height="70dp"
+        android:text="@string/send_global"
+        tools:layout_editor_absoluteX="108dp"
+        tools:layout_editor_absoluteY="585dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

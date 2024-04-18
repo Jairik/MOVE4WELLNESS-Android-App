@@ -13,4 +13,13 @@
     <string name="username_email_phoneNumber">Username/Email/Phone-Number</string>
     <string name="Welcome_Back">Welcome Back!</string>
     <string name="HELLO_TEXT">Hello,</string>
+    <string name="manager_s_edition">Manager\'s Edition</string>
+    <string name="this_week_s_total">This Week\'s Total:</string>
+    <string name="this_week_s_average">This week\'s average:</string>
+    <string name="all_time_total">All Time Total:</string>
+    <string name="all_time_average">All Time Average:</string>
+    <string name="total_users">Total Users:</string>
+    <string name="search_user">Search User</string>
+    <string name="all_users">See All Users</string>
+    <string name="send_global">Send Global Message</string>
 </resources>
