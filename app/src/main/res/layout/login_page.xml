@@ -8,7 +8,7 @@
     <!-- Top instructions text -->
 
     <TextView
-        android:id="@+id/HEY_THERE_TEXT"
+        android:id="@+id/HELLO_TEXT"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="166dp"
@@ -16,34 +16,35 @@
         android:layout_marginEnd="166dp"
         android:layout_marginBottom="8dp"
         android:fontFamily="@font/poppins"
-        android:text="@string/hey_there"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/CREATE_ACCOUNT_TEXT"
+        android:text="@string/HELLO_TEXT"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/WELCOME_BACK_TEXT"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Adding editTextViews for full name, email, phone number, and password -->
+
+    <!-- User can use userName, phoneNumber, or Email to log in -->
     <TextView
-        android:id="@+id/CREATE_ACCOUNT_TEXT"
+        android:id="@+id/WELCOME_BACK_TEXT"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="108dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="108dp"
-        android:layout_marginBottom="33dp"
+        android:layout_marginBottom="28dp"
         android:fontFamily="@font/poppins_extrabold"
-        android:text="@string/create_an_account"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/Register_Full_Name"
+        android:text="@string/Welcome_Back"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/login_name"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/HEY_THERE_TEXT" />
 
-    <!-- Adding editTextViews for full name, email, phone number, and password -->
-
     <EditText
-        android:id="@+id/Register_Full_Name"
+        android:id="@+id/login_name"
         android:layout_width="208dp"
         android:layout_height="56dp"
         android:layout_marginTop="29dp"
@@ -52,42 +53,12 @@
         android:fontFamily="@font/poppins"
         android:inputType="text"
         android:text=""
-        android:hint="@string/full_name"
+        android:hint="@string/username_email_phoneNumber"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/CREATE_ACCOUNT_TEXT" />
+        app:layout_constraintTop_toBottomOf="@+id/WELCOME_BACK_TEXT"/>
 
     <EditText
-        android:id="@+id/Register_Email_Address"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="98dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="103dp"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Register_Full_Name"
-        tools:text=""
-        android:hint="@string/email_optional"/>
-
-    <EditText
-        android:id="@+id/Register_Phone_Number"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="101dp"
-        android:layout_marginTop="9dp"
-        android:layout_marginEnd="101dp"
-        android:ems="10"
-        android:inputType="phone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Register_Email_Address"
-        tools:text=""
-        android:hint="@string/phone_number_optional" />
-
-    <EditText
-        android:id="@+id/Register_Password"
+        android:id="@+id/Login_Password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="101dp"
@@ -97,9 +68,11 @@
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Register_Phone_Number"
+        app:layout_constraintTop_toBottomOf="@+id/login_name"
         tools:text=""
         android:hint="@string/password"/>
+
+    <!-- Adding finish button that redirects user -->
 
     <Button
         android:id="@+id/Register_Register"
@@ -109,7 +82,7 @@
         android:layout_marginEnd="56dp"
         android:layout_marginBottom="50dp"
         android:background="@drawable/rounded_button_drawable"
-        android:text="@string/register"
+        android:text="@string/login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -117,12 +90,14 @@
         app:layout_constraintTop_toBottomOf="@+id/Register_Password"
         app:layout_constraintVertical_bias="0.9" />
 
+    <!-- Adding picture -->
+
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="148dp"
-        android:layout_height="319dp"
+        android:layout_width="244dp"
+        android:layout_height="448dp"
         app:srcCompat="@drawable/login_register_girl"
-        tools:layout_editor_absoluteX="131dp"
-        tools:layout_editor_absoluteY="331dp" />
+        tools:layout_editor_absoluteX="83dp"
+        tools:layout_editor_absoluteY="219dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
