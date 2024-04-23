@@ -186,33 +186,40 @@
         app:layout_constraintTop_toBottomOf="@+id/TOTAL_USERS" />
 
     <!-- Making a button that swaps to the "search user" activity -->
-    <Button
-        android:id="@+id/search_User"
-        android:layout_width="195dp"
-        android:layout_height="70dp"
-        android:text="@string/search_user"
-        tools:layout_editor_absoluteX="108dp"
-        tools:layout_editor_absoluteY="426dp" />
 
     <!-- Making a button that swaps to the "all users" activity, which shows
      all users in a sample list-like format -->
+
+    <!-- Making a button that swaps to the "send global message" activity, which
+     allows for managers accounts to craft a message to send to everybody -->
+
     <Button
         android:id="@+id/all_Users"
         android:layout_width="195dp"
         android:layout_height="70dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="444dp"
+        android:layout_marginBottom="35dp"
         android:text="@string/all_users"
-        tools:layout_editor_absoluteX="108dp"
-        tools:layout_editor_absoluteY="506dp" />
+        app:layout_constraintBottom_toTopOf="@+id/send_Global_Message"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Making a button that swaps to the "send global message" activity, which
-     allows for managers accounts to craft a message to send to everybody -->
     <Button
         android:id="@+id/send_Global_Message"
         android:layout_width="195dp"
         android:layout_height="70dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginEnd="108dp"
+        android:layout_marginBottom="112dp"
         android:text="@string/send_global"
-        tools:layout_editor_absoluteX="108dp"
-        tools:layout_editor_absoluteY="585dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/all_Users" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
