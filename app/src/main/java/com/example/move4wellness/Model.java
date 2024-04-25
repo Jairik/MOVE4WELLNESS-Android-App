@@ -1,15 +1,17 @@
 package com.example.move4wellness;
 
+import java.util.ArrayList;
+
 /*Authors: JJ McCauley & Will Lamuth
  * Creation Date: 4/2/24
  * Last Update: 4/9/24
- * Notes:
+ * Notes: N/A
  * Description: This class serves as the Model to the app, handling all of
- * the backend data management. */
+ * the backend data management and stuff. */
+
 public class Model {
     //Data Members Here
-
-    //Likely No Constructor
+    ArrayList<String> firebaseKeys;
 
 
     //Looks through the database to check if the user exists
