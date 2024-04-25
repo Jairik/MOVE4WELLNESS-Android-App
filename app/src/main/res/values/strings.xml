@@ -13,4 +13,6 @@
     <string name="username_email_phoneNumber">Username/Email/Phone-Number</string>
     <string name="Welcome_Back">Welcome Back!</string>
     <string name="HELLO_TEXT">Hello,</string>
+    <string name="welcome_back">Welcome Back,</string>
+    <string name="user">User</string>
 </resources>
