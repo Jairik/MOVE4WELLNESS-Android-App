@@ -3,9 +3,7 @@ package com.example.move4wellness;
 /*Authors: JJ McCauley & Will Lamuth
 * Creation Date: 4/2/24
 * Last Update: 4/9/24
-* Notes: */
-
-//Could act as the Controller for now
+* Notes: This page acts as the initial login sign-up page */
 
 import android.os.Bundle;
 
