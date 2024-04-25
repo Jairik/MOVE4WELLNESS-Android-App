@@ -89,8 +89,9 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="229dp"
-        android:layout_height="58dp"
+        android:layout_width="320dp"
+        android:layout_height="63dp"
+        android:backgroundTint="#AC61F6"
         android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
