@@ -28,6 +28,9 @@ public class Model {
         return true; //Temporary
     }
 
+    //Deletes a given thing from the firebase
+
+
     //-Rest of the functions-
 
 }

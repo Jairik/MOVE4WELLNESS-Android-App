@@ -5,4 +5,5 @@ package com.example.move4wellness;
  * Redirects to: */
 
 public class ManagerGlobalMessage {
+
 }
