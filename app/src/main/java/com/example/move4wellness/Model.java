@@ -32,7 +32,8 @@ public class Model {
     FirebaseUser user;
     private char status; //For login/registration, must be global for scope reasons (may refactor)
 
-    /*Used for registering a new user, given a String email and String password*/
+    /*Used for registering a new user, given a String email and String password
+    * NOTES: an overloaded function could be used for verifying Phone-numbers*/
     public char createUser(String email, String password) {
         status = 'U'; //Signal value for unsuccessful/unknown error
         if(email.matches(emailPattern)) {
@@ -72,16 +73,18 @@ public class Model {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful()) {
-                        status = 'S';
+                        status = 'S'; //Successful
                     }
                     else {
-                        status = 'U';
+                        status = 'U'; //Unsuccessful
                     }
                 }
             });
         }
         return status;
     }
+
+
 
 
 

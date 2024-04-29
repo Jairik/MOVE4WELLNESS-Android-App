@@ -6,7 +6,9 @@ package com.example.move4wellness;
 * Notes: This page acts as the initial login sign-up page
 * Redirects to: Register/login pages */
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,7 +30,19 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        model.setAuth(FirebaseAuth.getInstance());
+        //CAUSING ERROR -> model.setAuth(FirebaseAuth.getInstance());
+    }
+
+    //Switch to register screen
+    public void onClickRegister(View view) {
+        Intent intent = new Intent(MainActivity.this, RegisterPage.class);
+        startActivity(intent);
+    }
+
+    //Switch to login screen
+    public void onClickLogin(View view) {
+        Intent intent = new Intent(MainActivity.this, LoginPage.class);
+        startActivity(intent);
     }
 
     //NOTES - When button is clicked, authentication may take a little bit (1-3+ seconds)
