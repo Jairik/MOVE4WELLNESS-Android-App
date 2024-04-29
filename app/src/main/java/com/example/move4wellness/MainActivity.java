@@ -2,7 +2,7 @@ package com.example.move4wellness;
 
 /*Authors: JJ McCauley & Will Lamuth
 * Creation Date: 4/2/24
-* Last Update: 4/9/24
+* Last Update: 4/28/24
 * Notes: This page acts as the initial login sign-up page
 * Redirects to: Register/login pages */
 
@@ -13,9 +13,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import com.google.firebase.auth.*; //Can refine later
+
 
 public class MainActivity extends AppCompatActivity {
-
+    Model model; //Will need to passed to different activities
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,5 +28,13 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        model.setAuth(FirebaseAuth.getInstance());
     }
+
+    //NOTES - When button is clicked, authentication may take a little bit (1-3+ seconds)
+    //I'm not sure how we can fix that using MVC Model, I really do not want to have to
+    //use multithreading so idk. For now lets just call it a feature
+    //Potential Solution: Activate it prior to calling createUser(), then dismiss it after
+    //and add relevant error messages. (Referring to loading screen). I can add this to
+    //main branch after the merge happens
 }
