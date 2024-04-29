@@ -4,6 +4,16 @@ package com.example.move4wellness;
 * Description:
 * Redirects to: */
 
-public class LoginPage {
+import android.os.Bundle;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class LoginPage extends AppCompatActivity {
+    //Load the XML file
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.register_page);
+    }
+
 
 }

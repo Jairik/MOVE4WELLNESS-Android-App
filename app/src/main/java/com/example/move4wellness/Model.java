@@ -18,13 +18,26 @@ import com.google.firebase.auth.*; //Can refine later
  * Description: This class serves as the Model to the app, handling all of
  * the backend data management and stuff. */
 
-/* -- Current Database Tree Structure --
-* no clue
-* --------------------------------------- */
+/* -- Current Database Tree Structure (Tentative) --
+* users {
+*   -email/password (handled through user authentication)
+*   -activities collection {
+*       -> activity_name
+*       -> activity_length
+*   }
+* }
+* managers {
+*   -email/password (handled through user authentication)
+* }
+* statistics {
+*   -total_users
+*   -total_minutes
+* }
+* -------------------------------------------------- */
 
 public class Model {
-    //Data Members Here
-    ArrayList<String> firebaseKeys; //Holds keys for activities
+
+    ArrayList<String> activityKeys; //Holds keys for activities
     String userKey; //Holds key for user
     String statisticsKey; //Key for statistics node, will be modified when new user/activity is added
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"; //Regular expression to verify valid email
@@ -62,7 +75,7 @@ public class Model {
     * Note: Email+Password validation occurs to cut down on Firebase queries*/
     public char authUser(String email, String password) {
         status = 'U'; //Signal value for unsuccessful/unknown
-        if(email.matches(emailPattern)) {
+        if(!email.matches(emailPattern)) {
             status = 'E'; //Signal value that email is incorrect
         }
         else if(password.isEmpty() || password.length() < 6) {
@@ -95,7 +108,8 @@ public class Model {
 
     /*Fetches all activities and details from the current user
     * Returns: An ArrayList<String>, with the even entries holding the activity names and
-    * the odd entries holding the corresponding minutes */
+    * the odd entries holding the corresponding minutes
+    * NOTE: There is definitely a better way to do this */
     public ArrayList<String> fetchActivities() {
         ArrayList<String> names_minutes = new ArrayList<>();
         //for snapshot: whatever idk -> load them all

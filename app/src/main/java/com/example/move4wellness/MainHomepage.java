@@ -1,12 +1,12 @@
 package com.example.move4wellness;
 
-/* Manager home page class
+/* Main Homepage Class
  * Description:
  * Redirects to: */
 
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class ManagerHome extends AppCompatActivity {
+public class MainHomepage extends AppCompatActivity {
 
 }

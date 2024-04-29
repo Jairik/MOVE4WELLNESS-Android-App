@@ -4,6 +4,9 @@ package com.example.move4wellness;
  * Description:
  * Redirects to: */
 
-public class ChooseEvent {
+import android.os.Bundle;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class ChooseEvent extends AppCompatActivity {
 
 }
