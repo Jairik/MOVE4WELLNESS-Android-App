@@ -3,9 +3,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".LoginPage">
 
     <!-- Top instructions text -->
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="244dp"
+        android:layout_height="448dp"
+        android:layout_marginStart="83dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="84dp"
+        android:layout_marginBottom="64dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Login_Password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/login_name"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/login_register_girl" />
 
     <TextView
         android:id="@+id/HELLO_TEXT"
@@ -51,11 +69,11 @@
         android:layout_marginEnd="103dp"
         android:ems="10"
         android:fontFamily="@font/poppins"
+        android:hint="@string/username_email_phoneNumber"
         android:inputType="text"
         android:text=""
-        android:hint="@string/username_email_phoneNumber"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/WELCOME_BACK_TEXT"/>
+        app:layout_constraintTop_toBottomOf="@+id/WELCOME_BACK_TEXT" />
 
     <EditText
         android:id="@+id/Login_Password"
@@ -65,14 +83,17 @@
         android:layout_marginTop="12dp"
         android:layout_marginEnd="101dp"
         android:ems="10"
+        android:hint="@string/password"
         android:inputType="textPassword"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_name"
-        tools:text=""
-        android:hint="@string/password"/>
+        tools:text="" />
 
     <!-- Adding finish button that redirects user -->
+
+    <!-- Adding picture -->
 
     <Button
         android:id="@+id/Register_Register"
@@ -81,23 +102,14 @@
         android:layout_marginStart="56dp"
         android:layout_marginEnd="56dp"
         android:layout_marginBottom="50dp"
-        android:background="@drawable/rounded_button_drawable"
+        android:backgroundTint="#AC61F6"
+        android:onClick="onClickHomepage"
         android:text="@string/login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Register_Password"
-        app:layout_constraintVertical_bias="0.9" />
-
-    <!-- Adding picture -->
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="244dp"
-        android:layout_height="448dp"
-        app:srcCompat="@drawable/login_register_girl"
-        tools:layout_editor_absoluteX="83dp"
-        tools:layout_editor_absoluteY="219dp" />
+        app:layout_constraintTop_toBottomOf="@+id/Login_Password"
+        app:layout_constraintVertical_bias="0.958" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -84,7 +84,8 @@ public class RegisterPage extends AppCompatActivity {
         return status;
     }
 
-
-
-
+    public void onClickChooseEvent(View view) {
+        Intent intent = new Intent(RegisterPage.this, ChooseEvent.class);
+        startActivity(intent);
+    }
 }

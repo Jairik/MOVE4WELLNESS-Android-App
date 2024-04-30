@@ -13,6 +13,40 @@
         android:theme="@style/Theme.MOVE4WELLNESS"
         tools:targetApi="31">
         <activity
+            android:name=".UserProfile"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityTracker"
+            android:exported="false" />
+        <activity
+            android:name=".LoginPage"
+            android:exported="false" />
+        <activity
+            android:name=".RegisterPage"
+            android:exported="false" />
+        <activity
+            android:name=".ChooseEvent"
+            android:exported="false" />
+        <activity
+            android:name=".MainHomepage"
+            android:exported="false" />
+        <activity
+            android:name=".ManagerGlobalMessage"
+            android:exported="false" />
+        <activity
+            android:name=".ManagerHome"
+            android:exported="false" />
+        <activity
+            android:name=".ManagerSeeUsers"
+            android:exported="false" />
+        <activity
+            android:name=".NotificationScreen"
+            android:exported="false" />
+        <activity
+            android:name=".UpdateActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
@@ -21,6 +55,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
