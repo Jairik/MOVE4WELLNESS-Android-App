@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/linearLayout2"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".MainHomepage">
 
     <TextView
         android:id="@+id/textView2"
@@ -55,6 +56,7 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/imageView4"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.164"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
@@ -70,6 +72,7 @@
         android:backgroundTint="@color/white"
         android:text="Track"
         android:textColor="@color/purple"
+        android:onClick="onClickActivityUpdate"
         app:layout_constraintBottom_toBottomOf="@+id/imageView4"
         app:layout_constraintEnd_toEndOf="@+id/imageView4"
         app:layout_constraintHorizontal_bias="0.0"
@@ -88,6 +91,7 @@
         android:backgroundTint="@color/white"
         android:text="Track"
         android:textColor="@color/purple"
+        android:onClick="onClickActivityUpdate"
         app:layout_constraintBottom_toBottomOf="@+id/imageView4"
         app:layout_constraintEnd_toEndOf="@+id/imageView4"
         app:layout_constraintHorizontal_bias="0.0"
@@ -106,6 +110,7 @@
         android:backgroundTint="@color/white"
         android:text="Track"
         android:textColor="@color/purple"
+        android:onClick="onClickActivityUpdate"
         app:layout_constraintBottom_toBottomOf="@+id/imageView4"
         app:layout_constraintEnd_toEndOf="@+id/imageView4"
         app:layout_constraintHorizontal_bias="0.0"
@@ -172,6 +177,7 @@
         android:adjustViewBounds="true"
         android:background="#00000000"
         android:scaleType="fitCenter"
+        android:onClick="onClickNotification"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -186,6 +192,7 @@
         android:adjustViewBounds="true"
         android:background="#00000000"
         android:scaleType="fitCenter"
+        android:onClick="onClickProfile"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/imageButton"
         app:layout_constraintTop_toTopOf="parent"
@@ -200,6 +207,7 @@
         android:adjustViewBounds="true"
         android:background="#00000000"
         android:scaleType="fitCenter"
+        android:onClick="onClickActivityTracker"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/imageButton4"
         app:layout_constraintHorizontal_bias="1.0"
