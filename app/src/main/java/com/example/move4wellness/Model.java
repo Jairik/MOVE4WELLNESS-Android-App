@@ -43,6 +43,7 @@ public class Model {
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"; //Regular expression to verify valid email
     FirebaseAuth auth;
     FirebaseUser user;
+    String userID; //Stores key used for writing data to user
     private char status; //For login/registration, must be global for scope reasons (may refactor)
 
     /*Used for registering a new user, given a String email and String password
@@ -99,10 +100,9 @@ public class Model {
 
 
 
-
-
     /* Given a userKey, will load the activity keys onto the arrayList */
     private void loadActivities(/*Reference To User*/) {
+        userID = user.getUid(); //gets the user ID from the current user
         //load the activities
     }
 
