@@ -92,7 +92,7 @@
         android:layout_width="320dp"
         android:layout_height="63dp"
         android:backgroundTint="#AC61F6"
-        android:text="Next"
+        android:text="@string/next"
         android:textSize="20sp"
         android:onClick="onClickHomepage"
         app:layout_constraintBottom_toBottomOf="parent"

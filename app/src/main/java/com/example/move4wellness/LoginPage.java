@@ -15,10 +15,10 @@ public class LoginPage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.register_page);
+        setContentView(R.layout.login_page);
     }
 
-    public void onClickChooseEvent(View view) {
+    public void onClickHomePage(View view) {
         Intent intent = new Intent(LoginPage.this, ChooseEvent.class);
         startActivity(intent);
     }

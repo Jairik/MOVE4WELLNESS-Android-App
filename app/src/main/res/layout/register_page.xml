@@ -3,9 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".RegisterPage">
 
     <!-- Top instructions text -->
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="148dp"
+        android:layout_height="319dp"
+        android:layout_marginStart="131dp"
+        android:layout_marginTop="331dp"
+        android:layout_marginEnd="132dp"
+        android:layout_marginBottom="81dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/login_register_girl" />
 
     <TextView
         android:id="@+id/HEY_THERE_TEXT"
@@ -50,9 +65,9 @@
         android:layout_marginEnd="103dp"
         android:ems="10"
         android:fontFamily="@font/poppins"
+        android:hint="@string/full_name"
         android:inputType="text"
         android:text=""
-        android:hint="@string/full_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CREATE_ACCOUNT_TEXT" />
 
@@ -64,12 +79,12 @@
         android:layout_marginTop="12dp"
         android:layout_marginEnd="103dp"
         android:ems="10"
+        android:hint="@string/email_optional"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Register_Full_Name"
-        tools:text=""
-        android:hint="@string/email_optional"/>
+        tools:text="" />
 
     <EditText
         android:id="@+id/Register_Phone_Number"
@@ -79,12 +94,12 @@
         android:layout_marginTop="9dp"
         android:layout_marginEnd="101dp"
         android:ems="10"
+        android:hint="@string/phone_number_optional"
         android:inputType="phone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Register_Email_Address"
-        tools:text=""
-        android:hint="@string/phone_number_optional" />
+        tools:text="" />
 
     <EditText
         android:id="@+id/Register_Password"
@@ -94,12 +109,12 @@
         android:layout_marginTop="12dp"
         android:layout_marginEnd="101dp"
         android:ems="10"
+        android:hint="@string/password"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Register_Phone_Number"
-        tools:text=""
-        android:hint="@string/password"/>
+        tools:text="" />
 
     <Button
         android:id="@+id/Register_Register"
@@ -115,14 +130,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Register_Password"
-        app:layout_constraintVertical_bias="0.9" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="148dp"
-        android:layout_height="319dp"
-        app:srcCompat="@drawable/login_register_girl"
-        tools:layout_editor_absoluteX="131dp"
-        tools:layout_editor_absoluteY="331dp" />
+        app:layout_constraintVertical_bias="0.9"
+        android:onClick="onClickChooseEvent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
