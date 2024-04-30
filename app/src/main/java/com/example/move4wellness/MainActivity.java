@@ -30,12 +30,14 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        model = new Model(); //Creating the model
         //CAUSING ERROR -> model.setAuth(FirebaseAuth.getInstance());
     }
 
     //Switch to register screen
     public void onClickRegister(View view) {
         Intent intent = new Intent(MainActivity.this, RegisterPage.class);
+        intent.putExtra("modelKey", model); //Passing the model into the register activity
         startActivity(intent);
     }
 

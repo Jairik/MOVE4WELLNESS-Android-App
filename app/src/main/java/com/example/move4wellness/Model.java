@@ -2,6 +2,7 @@ package com.example.move4wellness;
 
 import androidx.annotation.NonNull;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -14,7 +15,7 @@ import com.google.firebase.auth.*; //Can refine later
 /*Authors: JJ McCauley & Will Lamuth
  * Creation Date: 4/2/24
  * Last Update: 4/27/24
- * Notes: Uses Firebase User Authentication and Firebase Realtime Database
+ * Notes: Uses Firebase User Authentication and Firebase Realtime Database.
  * Description: This class serves as the Model to the app, handling all of
  * the backend data management and stuff. */
 
@@ -34,7 +35,9 @@ import com.google.firebase.auth.*; //Can refine later
 * }
 * -------------------------------------------------- */
 
-public class Model {
+
+//Model must implement Serializable in order to be passed into different intents
+public class Model implements Serializable {
 
     ArrayList<String> activityKeys; //Holds keys for activities
     String userKey; //Holds key for user
