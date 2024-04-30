@@ -37,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
     //Switch to register screen
     public void onClickRegister(View view) {
         Intent intent = new Intent(MainActivity.this, RegisterPage.class);
-        intent.putExtra("modelKey", model); //Passing the model into the register activity
         startActivity(intent);
     }
 
@@ -46,11 +45,4 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, LoginPage.class);
         startActivity(intent);
     }
-
-    //NOTES - When button is clicked, authentication may take a little bit (1-3+ seconds)
-    //I'm not sure how we can fix that using MVC Model, I really do not want to have to
-    //use multithreading so idk. For now lets just call it a feature
-    //Potential Solution: Activate it prior to calling createUser(), then dismiss it after
-    //and add relevant error messages. (Referring to loading screen). I can add this to
-    //main branch after the merge happens
 }

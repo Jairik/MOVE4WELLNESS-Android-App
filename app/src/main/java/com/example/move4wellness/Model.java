@@ -33,6 +33,9 @@ import com.google.firebase.auth.*; //Can refine later
 *   -total_users
 *   -total_minutes
 * }
+* notifications {
+*   -Strings for each notification
+* }
 * -------------------------------------------------- */
 
 
