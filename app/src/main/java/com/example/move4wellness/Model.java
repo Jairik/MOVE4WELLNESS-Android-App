@@ -20,14 +20,13 @@ import com.google.firebase.auth.*; //Can refine later
 
 /* -- Current Database Tree Structure (Tentative) --
 * users {
-*   -email/password (handled through user authentication)
-*   -activities collection {
-*       -> activity_name
-*       -> activity_length
-*   }
-* }
-* managers {
-*   -email/password (handled through user authentication)
+*   -userID {  (NOTE: Will be assigned via Firebase User Authentication)
+*         -activities collection {
+*            -> activity_name
+*            -> activity_length
+*         }
+*         -> isManager (boolean value)
+*    }
 * }
 * statistics {
 *   -total_users
