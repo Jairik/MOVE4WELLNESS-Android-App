@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".ChooseEvent">
 
     <ImageView
         android:id="@+id/imageView"
@@ -75,7 +76,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.657" />
 
-
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="269dp"
@@ -92,7 +92,9 @@
         android:layout_width="320dp"
         android:layout_height="63dp"
         android:backgroundTint="#AC61F6"
-        android:text="Button"
+        android:text="Next"
+        android:textSize="20sp"
+        android:onClick="onClickHomepage"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
