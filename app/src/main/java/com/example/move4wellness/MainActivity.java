@@ -19,7 +19,6 @@ import androidx.core.view.WindowInsetsCompat;
 
 
 public class MainActivity extends AppCompatActivity {
-    Model model; //Will need to passed to different activities
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,8 +29,6 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        model = new Model(); //Creating the model
-        //CAUSING ERROR -> model.setAuth(FirebaseAuth.getInstance());
     }
 
     //Switch to register screen
