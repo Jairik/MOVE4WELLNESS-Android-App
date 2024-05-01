@@ -29,10 +29,9 @@ public class RegisterPage extends AppCompatActivity {
     EditText passwordInput;
     ProgressBar progressBar;
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"; //Regular expression for email verification
-    boolean success;
 
 
-    //Load the XML file
+    //Load the XML file & get text-fields
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,28 +45,7 @@ public class RegisterPage extends AppCompatActivity {
         user = auth.getCurrentUser();
     }
 
-    public boolean createUser(String email, String password) {
-        if(!email.matches(emailPattern)) {
-            //Display an error message on the email text field
-            emailInput.setError("Invalid Email");
-            success = false;
-        }
-        else if(password.isEmpty() || password.length() < 6) {
-            //Display an error message on the password text field
-            passwordInput.setError("Invalid Password");
-            success = false;
-        }
-        else {
-            auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                @Override
-                public void onComplete(@NonNull Task<AuthResult> task) {
-                    success = task.isSuccessful();
-                }
-            });
-        }
-        return success;
-    }
-
+    //On the button click, create the user if valid information is provided
     public void onClickChooseEvent(View view) {
         //Getting the text from the text-fields
         String emailText = emailInput.getText().toString().trim();
