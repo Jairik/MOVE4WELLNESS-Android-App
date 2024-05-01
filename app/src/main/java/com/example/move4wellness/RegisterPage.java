@@ -4,11 +4,15 @@ package com.example.move4wellness;
  * Description:
  * Redirects to: ChooseEvent Screen */
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.EditText;
+import android.view.View;
+import android.widget.ProgressBar;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -19,13 +23,13 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class RegisterPage extends AppCompatActivity {
 
-    Model model;
     FirebaseAuth auth;
     FirebaseUser user;
-    EditText email;
-    EditText password;
+    EditText emailInput;
+    EditText passwordInput;
+    ProgressBar progressBar;
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"; //Regular expression for email verification
-    char status;
+    boolean success;
 
 
     //Load the XML file
@@ -34,58 +38,64 @@ public class RegisterPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register_page);
         //Getting the editText fields
-        email = findViewById(R.id.Register_Email_Address);
-        password = findViewById(R.id.Register_Password);
+        emailInput = findViewById(R.id.Register_Email_Address);
+        passwordInput = findViewById(R.id.Register_Password);
+        //progressBar = findViewById(R.id.progressBar1); Can implement later
+        //Initializing user and auth objects
+        auth = FirebaseAuth.getInstance();
+        user = auth.getCurrentUser();
     }
 
-    public void onClickRegister() {
-        String emailText = email.getText().toString().trim();
-        String passwordText = password.getText().toString().trim();
-        //Start loading box thing
-        char status1 = createUser(emailText, passwordText);
-        if(status1 == 'S') { //Successful
-            //Continue to next activity
-            Intent intent = new Intent(RegisterPage.this, ChooseEvent.class);
-            startActivity(intent);
-        }
-        else if(status1 == 'E') { //Email Error
+    public boolean createUser(String email, String password) {
+        if(!email.matches(emailPattern)) {
             //Display an error message on the email text field
-        }
-        else if(status1 == 'P') { //Password Error
-            //Display an error message on password text field
-
-        }
-        else { //Unknown error
-            //Display a general error message
-        }
-    }
-
-    public char createUser(String email, String password) {
-        status = 'U'; //Signal value for unsuccessful/unknown error
-        if(email.matches(emailPattern)) {
-            status = 'E'; //Signal value that email is incorrect
+            emailInput.setError("Invalid Email");
+            success = false;
         }
         else if(password.isEmpty() || password.length() < 6) {
-            status = 'P'; //Signal value that password is invalid
+            //Display an error message on the password text field
+            passwordInput.setError("Invalid Password");
+            success = false;
         }
         else {
             auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
+                    success = task.isSuccessful();
+                }
+            });
+        }
+        return success;
+    }
+
+    public void onClickChooseEvent(View view) {
+        //Getting the text from the text-fields
+        String emailText = emailInput.getText().toString().trim();
+        String passwordText = passwordInput.getText().toString().trim();
+
+        //Validating email and password
+        if(!emailText.matches(emailPattern)) {
+            //Display an error message on the email text field
+            emailInput.setError("Invalid Email");
+        }
+        else if(passwordText.isEmpty() || passwordText.length() < 6) {
+            //Display an error message on the password text field
+            passwordInput.setError("Invalid Password");
+        }
+        else {
+            auth.createUserWithEmailAndPassword(emailText, passwordText).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful()) {
-                        status = 'S'; //Successful
+                        //Success! Go to next activity
+                        Intent intent = new Intent(RegisterPage.this, ChooseEvent.class);
+                        startActivity(intent);
                     }
                     else {
-                        status = 'U'; //Unsuccessful
+                        emailInput.setError("Unknown Error - please try again");
                     }
                 }
             });
         }
-        return status;
-    }
-
-    public void onClickChooseEvent(View view) {
-        Intent intent = new Intent(RegisterPage.this, ChooseEvent.class);
-        startActivity(intent);
     }
 }
