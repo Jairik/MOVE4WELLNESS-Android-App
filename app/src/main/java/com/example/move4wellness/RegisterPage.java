@@ -17,6 +17,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -65,7 +67,8 @@ public class RegisterPage extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful()) {
-                        //Success! Go to next activity
+                        //Success! Add uniqueID to database and go to next activity
+                        addUserToDatabase();
                         Intent intent = new Intent(RegisterPage.this, ChooseEvent.class);
                         startActivity(intent);
                     }
@@ -76,4 +79,21 @@ public class RegisterPage extends AppCompatActivity {
             });
         }
     }
+
+    private void addUserToDatabase() {
+        user = auth.getCurrentUser(); //Ensuring that the current user is now received
+        if(user != null) {
+            String userUID = user.getUid();
+            DatabaseReference database = FirebaseDatabase.getInstance().getReference();
+            //Creating a reference to the user's child where we can place the UID
+            DatabaseReference usersRef = database.child("users").child(userUID);
+            //Adding the UniqueID to the database
+            usersRef.setValue(userUID);
+        }
+        else {
+            //Break the program? It shouldn't ever get here
+        }
+    }
+
+
 }
