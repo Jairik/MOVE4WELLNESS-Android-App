@@ -33,11 +33,6 @@ public class MainHomepage extends AppCompatActivity {
         startActivity(intent);
     }
 
-    //redirects to activity updater - (not sure how many activy updater screens we should have)
-    public void onClickActivityUpdate(View view) {
-        Intent intent = new Intent(MainHomepage.this, UpdateActivity.class);
-        startActivity(intent);
-    }
 
     //redirects to activity tracker screen
     public void onClickActivityTracker(View view) {
@@ -46,4 +41,25 @@ public class MainHomepage extends AppCompatActivity {
     }
 
 
+    /*------------------------------------------------------------------------
+      Redirects to update activity screen, passing in a string exercise name
+    -------------------------------------------------------------------------- */
+
+    public void onClickActivityUpdateSitUps(View view) {
+        Intent intent = new Intent(MainHomepage.this, UpdateActivity.class);
+        intent.putExtra("STRING_KEY", "Sit-ups"); //Pass in exercise name
+        startActivity(intent);
+    }
+
+    public void onClickActivityUpdateWeightlifting(View view) {
+        Intent intent = new Intent(MainHomepage.this, UpdateActivity.class);
+        intent.putExtra("STRING_KEY", "Weightlifting"); //Pass in exercise name
+        startActivity(intent);
+    }
+
+    public void onClickActivityUpdateJumpRope(View view) {
+        Intent intent = new Intent(MainHomepage.this, UpdateActivity.class);
+        intent.putExtra("STRING_KEY", "Jump Rope"); //Pass in exercise name
+        startActivity(intent);
+    }
 }
