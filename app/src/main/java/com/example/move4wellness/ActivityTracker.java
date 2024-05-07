@@ -45,7 +45,7 @@ public class ActivityTracker extends AppCompatActivity {
         BarDataSet dataSet = new BarDataSet(entries, "Exercises");
 
         //set color template
-        dataSet.setColors(ColorTemplate.PASTEL_COLORS);
+        dataSet.setColors(ColorTemplate.LIBERTY_COLORS);
 
         dataSet.setDrawValues(false);
 
