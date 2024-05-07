@@ -16,21 +16,32 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FieldValue;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class RegisterPage extends AppCompatActivity {
 
     FirebaseAuth auth;
     FirebaseUser user;
+    FirebaseFirestore db;
     EditText emailInput;
     EditText passwordInput;
+    EditText userNameInput;
     ProgressBar progressBar;
-    String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"; //Regular expression for email verification
+    String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";//Regular expression for email verification
+    String userName;
+    boolean userAdded;
 
 
     //Load the XML file & get text-fields
@@ -41,7 +52,8 @@ public class RegisterPage extends AppCompatActivity {
         //Getting the editText fields
         emailInput = findViewById(R.id.Register_Email_Address);
         passwordInput = findViewById(R.id.Register_Password);
-        //progressBar = findViewById(R.id.progressBar1); Can implement later
+        userNameInput = findViewById(R.id.Register_Full_Name);
+        //progressBar = findViewById(R.id.progressBar1); //Can implement later
         //Initializing user and auth objects
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
@@ -52,6 +64,7 @@ public class RegisterPage extends AppCompatActivity {
         //Getting the text from the text-fields
         String emailText = emailInput.getText().toString().trim();
         String passwordText = passwordInput.getText().toString().trim();
+        userName = userNameInput.getText().toString().trim();
 
         //Validating email and password
         if(!emailText.matches(emailPattern)) {
@@ -80,20 +93,36 @@ public class RegisterPage extends AppCompatActivity {
         }
     }
 
+    //Add the current user to the Fire store database after they have registered
     private void addUserToDatabase() {
         user = auth.getCurrentUser(); //Ensuring that the current user is now received
         if(user != null) {
             String userUID = user.getUid();
-            DatabaseReference database = FirebaseDatabase.getInstance().getReference();
-            //Creating a reference to the user's child where we can place the UID
-            DatabaseReference usersRef = database.child("users").child(userUID);
-            //Adding the UniqueID to the database
-            usersRef.setValue(userUID);
-        }
-        else {
-            //Break the program? It shouldn't ever get here
+            //Validating username
+            if(userName == null) {
+                userName = "User";
+            }
+            db = FirebaseFirestore.getInstance();
+            Map<String, Object> userData = new HashMap<>();
+            userData.put("uid", userUID);  // Storing UID
+            userData.put("username", userName); //Storing user ID
+            userData.put("isManager", false); //Setting user to not be a manager
+            userData.put("total_minutes", 0); //Initializing total_minutes
+            userData.put("num_exercises", 0); //Initializing num_exercises
+            db.collection("users").document(userUID).set(userData)
+            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                @Override
+                public void onSuccess(Void aVoid) {
+                    userAdded = true;
+                }
+            })
+            .addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    userAdded = false;
+                }
+            });
         }
     }
-
 
 }
