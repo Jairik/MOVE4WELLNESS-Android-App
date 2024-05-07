@@ -70,7 +70,7 @@ public class UpdateActivity extends AppCompatActivity {
         }
         //Add it to the Firebase activities collection
         FirebaseDatabase database =  FirebaseDatabase.getInstance();
-        DatabaseReference activitiesRef = database.child("users").child(uniqueUserID).child("activities");
+        //DatabaseReference activitiesRef = database.child("users").child(uniqueUserID).child("activities");
         //Once completed, show an animation or something then go back
         onClickGoBack(view);
     }
