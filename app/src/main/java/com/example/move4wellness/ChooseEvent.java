@@ -30,4 +30,5 @@ public class ChooseEvent extends AppCompatActivity {
         Intent intent = new Intent(ChooseEvent.this, MainHomepage.class);
         startActivity(intent);
     }
+
 }

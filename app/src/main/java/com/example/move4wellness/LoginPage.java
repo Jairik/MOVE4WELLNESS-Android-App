@@ -18,6 +18,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class LoginPage extends AppCompatActivity {
 
@@ -60,15 +63,60 @@ public class LoginPage extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful()) {
-                        //User is successfully signed in
-                        Intent intent = new Intent(LoginPage.this, ChooseEvent.class);
+                        //User is successfully signed in, redirect to appropriate task
+                        Intent intent;
+                        if(isManager()) {
+                            intent = new Intent(LoginPage.this, ManagerHome.class);
+                        }
+                        else {
+                            intent = new Intent(LoginPage.this, MainHomepage.class);
+                        }
                         startActivity(intent);
                     }
                     else {
                         emailInput.setError("Could not sign in");
                     }
+                    return false;
                 }
             });
         }
     }
+
+    private void setManagerCallback(ManagerStatusCallback callback) {
+        //If the user is null (it shouldn't be), return false
+        if(user == null) {
+            return;
+        }
+        //Getting details of the current user
+        user = auth.getCurrentUser();
+        assert user != null;
+        String UID = user.getUid();
+        //Getting reference to user through their unique ID
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        DocumentReference userRef = db.collection("users").document(UID);
+        boolean isManagerValue;
+        userRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if(task.isSuccessful()) {
+                    DocumentSnapshot doc = task.getResult();
+                    if(doc.exists()) {
+                        boolean isManager = Boolean.TRUE.equals(doc.getBoolean("isManager"));
+                    }
+                }
+            }
+        });
+        //I want to return isManager here
+        return false; //If unsuccessful, just return false
+    }
+
+    //Returns if the user is a manager
+    public boolean isManager() {
+
+    }
+
 }
+
+
+
+
