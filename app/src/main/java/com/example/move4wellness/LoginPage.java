@@ -64,37 +64,28 @@ public class LoginPage extends AppCompatActivity {
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful()) {
                         //User is successfully signed in, redirect to appropriate task
-                        Intent intent;
-                        if(isManager()) {
-                            intent = new Intent(LoginPage.this, ManagerHome.class);
-                        }
-                        else {
-                            intent = new Intent(LoginPage.this, MainHomepage.class);
-                        }
-                        startActivity(intent);
+                        checkManagerStatusandNavigate();
                     }
                     else {
                         emailInput.setError("Could not sign in");
                     }
-                    return false;
                 }
             });
         }
     }
 
-    private void setManagerCallback(ManagerStatusCallback callback) {
+    private void checkManagerStatusandNavigate() {
+        user = auth.getCurrentUser();
         //If the user is null (it shouldn't be), return false
         if(user == null) {
             return;
         }
-        //Getting details of the current user
-        user = auth.getCurrentUser();
-        assert user != null;
+        //Getting details of the current user & the database
         String UID = user.getUid();
-        //Getting reference to user through their unique ID
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         DocumentReference userRef = db.collection("users").document(UID);
-        boolean isManagerValue;
+
+        //Get the value of the "isManager" field and redirect to appropriate activity
         userRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
@@ -102,19 +93,23 @@ public class LoginPage extends AppCompatActivity {
                     DocumentSnapshot doc = task.getResult();
                     if(doc.exists()) {
                         boolean isManager = Boolean.TRUE.equals(doc.getBoolean("isManager"));
+                        Intent intent;
+                        if(isManager) { //User is a manager, redirect to manager home page
+                            intent = new Intent(LoginPage.this, ManagerHome.class);
+                        }
+                        else { //User is not a manager, redirect to normal homepage
+                            intent = new Intent(LoginPage.this, MainHomepage.class);
+                        }
+                        startActivity(intent);
                     }
+                }
+                else { //Error - navigate to normal homepage
+                    Intent intent = new Intent(LoginPage.this, MainHomepage.class);
+                    startActivity(intent);
                 }
             }
         });
-        //I want to return isManager here
-        return false; //If unsuccessful, just return false
     }
-
-    //Returns if the user is a manager
-    public boolean isManager() {
-
-    }
-
 }
 
 

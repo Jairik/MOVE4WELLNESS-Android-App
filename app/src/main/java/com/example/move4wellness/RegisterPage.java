@@ -88,7 +88,6 @@ public class RegisterPage extends AppCompatActivity {
                     else {
                         emailInput.setError("Unknown Error - please try again");
                     }
-                    return false;
                 }
             });
         }
