@@ -23,6 +23,7 @@ public class NotificationScreen extends AppCompatActivity {
     }
 
     //skeleton method for removing notifications from listview with long click
+    /*NOTE FROM JJ: We may want to wait to implement this, not super important */
     public void onLongClickRemove(View view){
 
     }
