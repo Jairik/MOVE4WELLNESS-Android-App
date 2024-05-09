@@ -6,6 +6,12 @@ package com.example.move4wellness;
 * Notes: This page acts as the initial login/sign-up page
 * Redirects to: Register/login pages */
 
+
+/* ----TEST USER INFORMATION----
+* Email: test@test.com
+* Password: password
+* -------------------------------*/
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
