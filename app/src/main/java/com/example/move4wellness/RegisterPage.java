@@ -76,4 +76,9 @@ public class RegisterPage extends AppCompatActivity {
             });
         }
     }
+
+    public void onClickBack(View view){
+        Intent intent = new Intent(RegisterPage.this, MainActivity.class);
+        startActivity(intent);
+    }
 }

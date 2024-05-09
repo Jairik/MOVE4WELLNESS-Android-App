@@ -8,34 +8,33 @@
 
     <!-- Top instructions text -->
 
+    <!-- Adding editTextViews for full name, email, phone number, and password -->
+
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="148dp"
-        android:layout_height="319dp"
+        android:layout_width="344dp"
+        android:layout_height="379dp"
         android:layout_marginStart="131dp"
-        android:layout_marginTop="331dp"
         android:layout_marginEnd="132dp"
-        android:layout_marginBottom="81dp"
+        android:layout_marginBottom="128dp"
+        android:adjustViewBounds="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+
         app:srcCompat="@drawable/login_register_girl" />
 
     <TextView
         android:id="@+id/HEY_THERE_TEXT"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="166dp"
-        android:layout_marginTop="57dp"
-        android:layout_marginEnd="166dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="28dp"
         android:fontFamily="@font/poppins"
         android:text="@string/hey_there"
         android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/CREATE_ACCOUNT_TEXT"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.356"
+        app:layout_constraintStart_toEndOf="@+id/imageButton7"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -45,104 +44,121 @@
         android:layout_marginStart="108dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="108dp"
-        android:layout_marginBottom="33dp"
         android:fontFamily="@font/poppins_extrabold"
         android:text="@string/create_an_account"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/Register_Full_Name"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/HEY_THERE_TEXT" />
+        app:layout_constraintTop_toBottomOf="@+id/HEY_THERE_TEXT"
+        app:layout_constraintVertical_bias="0.813" />
 
-    <!-- Adding editTextViews for full name, email, phone number, and password -->
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="347dp"
+        android:layout_height="256dp"
+        android:layout_marginTop="72dp"
+        android:adjustViewBounds="true"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/reg_box" />
 
     <EditText
         android:id="@+id/Register_Full_Name"
-        android:layout_width="208dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="29dp"
-        android:layout_marginEnd="103dp"
+        android:layout_width="217dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="46dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="12dp"
         android:ems="10"
         android:fontFamily="@font/poppins"
         android:hint="@string/full_name"
         android:inputType="text"
         android:text=""
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/CREATE_ACCOUNT_TEXT" />
+        app:layout_constraintBottom_toTopOf="@+id/Register_Email_Address"
+        app:layout_constraintEnd_toEndOf="@+id/imageView8"
+        app:layout_constraintHorizontal_bias="0.02"
+        app:layout_constraintStart_toStartOf="@+id/imageView8"
+        app:layout_constraintTop_toTopOf="@+id/imageView8"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/Register_Email_Address"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="98dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="103dp"
+        android:layout_width="216dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="12dp"
         android:ems="10"
         android:hint="@string/email_optional"
         android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Register_Full_Name"
-        tools:text="" />
-
-    <EditText
-        android:id="@+id/Register_Phone_Number"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="101dp"
-        android:layout_marginTop="9dp"
-        android:layout_marginEnd="101dp"
-        android:ems="10"
-        android:hint="@string/phone_number_optional"
-        android:inputType="phone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Register_Email_Address"
+        app:layout_constraintBottom_toTopOf="@+id/Register_Password"
+        app:layout_constraintEnd_toEndOf="@+id/imageView8"
+        app:layout_constraintHorizontal_bias="0.02"
+        app:layout_constraintStart_toStartOf="@+id/imageView8"
         tools:text="" />
 
     <EditText
         android:id="@+id/Register_Password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="101dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="101dp"
+        android:layout_width="217dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="65dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="36dp"
         android:ems="10"
         android:hint="@string/password"
         android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Register_Phone_Number"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView8"
+        app:layout_constraintEnd_toEndOf="@+id/imageView8"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/imageView8"
         tools:text="" />
 
     <Button
         android:id="@+id/Register_Register"
         android:layout_width="299dp"
         android:layout_height="61dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginEnd="56dp"
-        android:layout_marginBottom="50dp"
-        android:background="@drawable/rounded_button_drawable"
+        android:backgroundTint="#AC61F6"
+        android:onClick="onClickChooseEvent"
         android:text="@string/register"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Register_Password"
-        app:layout_constraintVertical_bias="0.9"
-        android:onClick="onClickChooseEvent"/>
-        <!-- Can be implemented later
-    <ProgressBar
-        android:id="@+id/progressBar1"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="51dp"
-        android:layout_marginTop="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/Register_Phone_Number" />
-        -->
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.626" />
+
+    <ImageButton
+        android:id="@+id/imageButton7"
+        android:layout_width="58dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:adjustViewBounds="true"
+        android:background="#00000000"
+        android:onClick="onClickBack"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back_button" />
+
+
+    <!-- Can be implemented later
+<ProgressBar
+    android:id="@+id/progressBar1"
+    style="?android:attr/progressBarStyle"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="51dp"
+    android:layout_marginTop="30dp"
+    app:layout_constraintBottom_toTopOf="@+id/imageView"
+    app:layout_constraintStart_toStartOf="@+id/imageView"
+    app:layout_constraintTop_toTopOf="@+id/Register_Phone_Number" />
+    -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -41,7 +41,7 @@ public class ActivityTracker extends AppCompatActivity {
             entries.add(newEntry);
         }
 
-        //initialiize dataset
+        //initialize dataset
         BarDataSet dataSet = new BarDataSet(entries, "Exercises");
 
         //set color template
@@ -58,6 +58,7 @@ public class ActivityTracker extends AppCompatActivity {
         //set description
         chart.getDescription().setText("Exercises Chart");
         chart.getDescription().setTextColor(Color.WHITE);
+
 
     }
 

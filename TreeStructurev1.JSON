@@ -1,0 +1,28 @@
+{
+    "users": {
+        "user1": {
+            "username": "Test_User",
+            "password": "password",
+            "email": "test@email.com",
+            "phone": "123-456-7890"
+        }
+    },
+    "managers": {
+        "all_time_total_minutes": 0, 
+        "total_users": 2,
+        "manager1": {
+            "username": "Test_Manager",
+            "password": "password1",
+            "email": "test1@email.com",
+            "phone" : "111-111-1111"
+        }
+    },
+    "activities": {
+        "user1": {
+            "activity1": {
+                "activity_name": "Running",
+                "total_time": 90
+            }
+        }
+    }
+}
