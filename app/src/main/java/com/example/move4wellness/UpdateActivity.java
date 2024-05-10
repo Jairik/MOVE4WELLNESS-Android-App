@@ -30,10 +30,12 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.HashMap;
 import java.util.Map;
 
+
 public class UpdateActivity extends AppCompatActivity {
 
     TextView exerciseName;
     TextView timeEditText;
+    //DATE WIDGET DECLARATION HERE
     FirebaseAuth auth;
     FirebaseUser user;
     FirebaseFirestore db;
