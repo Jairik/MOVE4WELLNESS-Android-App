@@ -54,6 +54,7 @@
         app:srcCompat="@drawable/back_button" />
 
     <ListView
+        android:id="@+id/listViewAllActivities"
         android:layout_width="410dp"
         android:layout_height="587dp"
         tools:layout_editor_absoluteX="1dp"

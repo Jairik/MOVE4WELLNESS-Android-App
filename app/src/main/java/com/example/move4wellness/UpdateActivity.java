@@ -111,6 +111,7 @@ public class UpdateActivity extends AppCompatActivity {
     //If there is somehow no user signed in, will redirect to login/register page
     private void noUserDetected() {
         Intent intent = new Intent(UpdateActivity.this, MainActivity.class);
+        startActivity(intent);
     }
 
     //Adds a given activity to the database, also updating the user's totals
