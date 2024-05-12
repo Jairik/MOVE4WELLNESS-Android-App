@@ -49,11 +49,12 @@ public class ManagerHome extends AppCompatActivity {
         //Getting the loading bar
         progressBar = findViewById(R.id.progress_bar);
         //Setting up database variable
-        progressBar.setVisibility(View.VISIBLE);
         db = FirebaseFirestore.getInstance();
         usersRef = db.collection("users");
         //Pulling data from the database to edit the statistical text fields
-        setTextFields();
+        //setTextFields();
+        String debug = "-99999";
+        totalUsersText.setText(debug); //Even this isn't showing up
     }
 
     //On-click method to seeAllUsers button, redirects to Manager See Users page
@@ -70,43 +71,42 @@ public class ManagerHome extends AppCompatActivity {
 
     //Query through all users to get their totals and number of users
     private void setTextFields() {
-        int[] numUsers = {0}, numExercises = {0}, totalDuration = {0};
+        String totalDurationString, numUsersString, averageDurationString,
+                totalExercisesString, averageTotalExercisesString;
+
+        progressBar.setVisibility(View.VISIBLE); //Starting the loading bar
 
         //Query all documents in the database, adding to the total
         usersRef.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                if(task.isSuccessful()) {
+                if (task.isSuccessful()) {
+                    long[] currentExercisesL = {0}, currentTotalDurationL = {0};
+                    int[] numUsers = {0}, numExercises = {0}, totalDuration = {0};
                     //For all documents in the users collection
-                    for(QueryDocumentSnapshot doc : task.getResult()) {
+                    for (QueryDocumentSnapshot doc : task.getResult()) {
                         //Get the statistics, and cast them to ints
-                        long currentExercisesL = 0, currentTotalDurationL = 0;
-                        try {
-                            currentExercisesL = doc.getLong("num_exercises");
-                            currentTotalDurationL = doc.getLong("total_minutes");
-                        }
-                        catch(NullPointerException e) {} //do nothing for now
-                        int currentExercises = (int) currentExercisesL;
-                        int currentTotalDuration = (int) currentTotalDurationL;
+                        currentExercisesL[0] = doc.getLong("num_exercises");
+                        currentTotalDurationL[0] = doc.getLong("total_minutes");
 
                         numUsers[0] += 1; //Incrementing by one
-                        numExercises[0] += currentExercises; //Incrementing total exercises
-                        totalDuration[0] += currentTotalDuration; //Incrementing total Duration of exercises
+                        numExercises[0] += (int) currentExercisesL[0]; //Incrementing total exercises
+                        totalDuration[0] += (int) currentTotalDurationL[0]; //Incrementing total Duration of exercises
                     }
-
                     //Setting the strings to replace in the text-fields
                     String numUsersString = String.valueOf(numUsers[0]);
                     String totalDurationString = String.valueOf(totalDuration[0]) + " minutes";
-                    String averageDurationString = String.valueOf((totalDuration[0])/numUsers[0]) + " minutes per user";
-                    String totalExercises = String.valueOf(numExercises[0]);
-                    String averageTotalExercises = String.valueOf((numExercises[0])/numUsers[0]) + " per user";
+                    String averageDurationString = String.valueOf((totalDuration[0]) / numUsers[0]) + " minutes per user";
+                    String totalExercisesString = String.valueOf(numExercises[0]);
+                    String averageTotalExercisesString = String.valueOf((numExercises[0]) / numUsers[0]) + " per user";
 
                     //Replacing edit-text fields
-                    totalUsersText.setText(numUsersString);
+                    //PROBLEM: THIS ISNT SHOWING UP AT ALL
+                    totalUsersText.setText("Testing");
                     allTimeTotalText.setText(totalDurationString);
                     allTimeAverageText.setText(averageDurationString);
-                    allTimeActivitiesText.setText(totalExercises);
-                    allTimeAverageActivitiesText.setText(averageTotalExercises);
+                    allTimeActivitiesText.setText(totalExercisesString);
+                    allTimeAverageActivitiesText.setText(averageTotalExercisesString);
                 }
                 progressBar.setVisibility(View.INVISIBLE); //Hiding the progressbar when operation is complete
             }

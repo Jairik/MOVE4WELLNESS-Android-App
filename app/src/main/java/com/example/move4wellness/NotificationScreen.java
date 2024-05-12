@@ -7,19 +7,30 @@ package com.example.move4wellness;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.ArrayList;
+
 public class NotificationScreen extends AppCompatActivity {
+    FirebaseFirestore db;
+    ArrayList<String> mList;
+    ListView listView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.notification_screen);
+        
     }
 
     public void onClickGoBack(View view) {
         Intent intent = new Intent(NotificationScreen.this, MainHomepage.class);
         startActivity(intent);
+
     }
 
     //skeleton method for removing notifications from listview with long click
