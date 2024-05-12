@@ -8,6 +8,7 @@
     tools:context=".NotificationScreen">
 
     <ListView
+        android:id="@+id/listViewNotifications"
         android:layout_width="409dp"
         android:layout_height="668dp"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -17,8 +17,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
@@ -26,64 +26,47 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class MainHomepage extends AppCompatActivity {
-
+    TextView usernameText;
     FirebaseAuth auth;
     FirebaseUser user;
-    FirebaseFirestore db;
-    DocumentReference userRef;
-    String uniqueUserID;
-    String username;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_homepage);
-        //Getting the current user
+        usernameText = findViewById(R.id.textView3);
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
-        db = FirebaseFirestore.getInstance();
-        /*Getting the current userUID, getting the database, and establishing a reference to the
-         * current user in the 'user' collection */
-        if(user != null) {
-            uniqueUserID = user.getUid();
-            userRef = db.collection("users").document(uniqueUserID);
-        }
-        else { //No user is signed in, redirect to main activity
-            noUserDetected(); //Go back to first welcome screen
-        }
-
-        //grab the username from the user document
-        if (userRef != null) {
-            userRef.get()
-                    .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-                        @Override
-                        public void onSuccess(DocumentSnapshot documentSnapshot) {
-                            if (documentSnapshot.exists()) {
-                                // Document exists, fetch username
-                                username = documentSnapshot.getString("username");
-                            }
-                            //set text to user's username
-                            TextView name = findViewById(R.id.username);
-                            name.setText(username);
-                        }
-                    })
-                    .addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            System.out.println("Error getting document");
-                        }
-                    });
-        } else {
-            System.out.println("userRef is null");
-        }
-
+        setUsernameText();
     }
 
-    //If there is somehow no user signed in, will redirect to login/register page
-    private void noUserDetected() {
-        Intent intent = new Intent(MainHomepage.this, MainActivity.class);
+    //Sets the username at the top of the screen
+    private void setUsernameText() {
+        user = auth.getCurrentUser();
+        //If the user is null (it shouldn't be), return false
+        if(user == null) {
+            return;
+        }
+        //Getting details of the current user & the database
+        String UID = user.getUid();
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        DocumentReference userRef = db.collection("users").document(UID);
+
+        userRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if(task.isSuccessful()) {
+                    DocumentSnapshot doc = task.getResult();
+                    if(doc.exists()) {
+                        String userName = doc.getString("username");
+                        usernameText.setText(userName);
+                    }
+                }
+            }
+        });
     }
 
-    //redirects to noti screen
+    //redirects to notification screen
     public void onClickNotification(View view) {
         Intent intent = new Intent(MainHomepage.this, NotificationScreen.class);
         startActivity(intent);

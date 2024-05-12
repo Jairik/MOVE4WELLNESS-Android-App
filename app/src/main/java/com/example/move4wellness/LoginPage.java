@@ -18,6 +18,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class LoginPage extends AppCompatActivity {
 
@@ -60,9 +63,8 @@ public class LoginPage extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful()) {
-                        //User is successfully signed in
-                        Intent intent = new Intent(LoginPage.this, ChooseEvent.class);
-                        startActivity(intent);
+                        //User is successfully signed in, redirect to appropriate task
+                        checkManagerStatusandNavigate();
                     }
                     else {
                         emailInput.setError("Could not sign in");
@@ -71,4 +73,45 @@ public class LoginPage extends AppCompatActivity {
             });
         }
     }
+
+    private void checkManagerStatusandNavigate() {
+        user = auth.getCurrentUser();
+        //If the user is null (it shouldn't be), return false
+        if(user == null) {
+            return;
+        }
+        //Getting details of the current user & the database
+        String UID = user.getUid();
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        DocumentReference userRef = db.collection("users").document(UID);
+
+        //Get the value of the "isManager" field and redirect to appropriate activity
+        userRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if(task.isSuccessful()) {
+                    DocumentSnapshot doc = task.getResult();
+                    if(doc.exists()) {
+                        boolean isManager = Boolean.TRUE.equals(doc.getBoolean("isManager"));
+                        Intent intent;
+                        if(isManager) { //User is a manager, redirect to manager home page
+                            intent = new Intent(LoginPage.this, ManagerHome.class);
+                        }
+                        else { //User is not a manager, redirect to normal homepage
+                            intent = new Intent(LoginPage.this, MainHomepage.class);
+                        }
+                        startActivity(intent);
+                    }
+                }
+                else { //Error - navigate to normal homepage
+                    Intent intent = new Intent(LoginPage.this, MainHomepage.class);
+                    startActivity(intent);
+                }
+            }
+        });
+    }
 }
+
+
+
+
