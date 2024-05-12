@@ -43,7 +43,9 @@ public class AllUserActivities extends AppCompatActivity {
         //Getting the username text field and list
         userNameInput = findViewById(R.id.alluseractivities_username);
         listView = findViewById(R.id.listViewAllActivities);
+        aList = new ArrayList<>();
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, aList);
+        listView.setAdapter(adapter);
         //progressBar = findViewById(R.id.progressBar1); Can implement later
         //Initializing user and auth objects
         db = FirebaseFirestore.getInstance();

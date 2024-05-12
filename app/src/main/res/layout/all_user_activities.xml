@@ -41,12 +41,13 @@
         android:id="@+id/imageButton3"
         android:layout_width="76dp"
         android:layout_height="62dp"
+        android:layout_marginEnd="335dp"
         android:adjustViewBounds="true"
         android:background="#00000000"
         android:onClick="onClickGoBack"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textView9"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.038"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -57,8 +58,15 @@
         android:id="@+id/listViewAllActivities"
         android:layout_width="410dp"
         android:layout_height="587dp"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="143dp" />
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="143dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <!-- Good/simplistic tutorial for customizing list view for what we want:
     https://www.youtube.com/watch?v=aUFdgLSEl0g

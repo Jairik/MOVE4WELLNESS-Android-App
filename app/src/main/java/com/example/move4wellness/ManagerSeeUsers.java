@@ -6,6 +6,7 @@ package com.example.move4wellness;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -49,9 +50,15 @@ public class ManagerSeeUsers extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //Get the corresponding UID and redirect to that page
                 String UID = userNameUIDs.get(position);
-                Intent intent = new Intent(ManagerSeeUsers.this, AllUserActivities.class);
-                intent.putExtra("user_UID", UID);
-                startActivity(intent);
+                if(UID == null) {
+                    Log.e("ManagerSeeUsers", "UID is null");
+                }
+                else {
+                    Log.d("ManagerSeeUsers", "UID is not null, moving to next activity");
+                    Intent intent = new Intent(ManagerSeeUsers.this, AllUserActivities.class);
+                    intent.putExtra("user_UID", UID);
+                    startActivity(intent);
+                }
             }
         });
     }
