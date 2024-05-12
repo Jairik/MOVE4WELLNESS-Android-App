@@ -25,9 +25,9 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-    <!-- Shwocasing this week's total -->
+    <!-- Showcasing the total number of activities -->
     <TextView
-        android:id="@+id/week_Total"
+        android:id="@+id/total_activities"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="200dp"
@@ -40,24 +40,24 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/WEEK_TOTAL" />
+        app:layout_constraintTop_toBottomOf="@+id/TOTAL_ACTIVITIES" />
     <TextView
-        android:id="@+id/WEEK_TOTAL"
+        android:id="@+id/TOTAL_ACTIVITIES"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="140dp"
         android:layout_marginEnd="140dp"
         android:layout_marginBottom="583dp"
         android:fontFamily="@font/poppins_extrabold"
-        android:text="@string/this_week_s_total"
+        android:text="@string/total_number_of_activities"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <!-- Showcasing this week's average -->
+    <!-- Showcasing the average amount of activities -->
     <TextView
-        android:id="@+id/week_Average"
+        android:id="@+id/average_activities"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="200dp"
@@ -70,24 +70,24 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/WEEK_TOTAL"
+        app:layout_constraintTop_toBottomOf="@+id/TOTAL_ACTIVITIES"
         app:layout_constraintVertical_bias="0.13" />
     <TextView
-        android:id="@+id/WEEK_AVERAGE"
+        android:id="@+id/AVERAGE_ACTIVITIES"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="140dp"
         android:layout_marginEnd="140dp"
         android:layout_marginBottom="512dp"
         android:fontFamily="@font/poppins_extrabold"
-        android:text="@string/this_week_s_average"
+        android:text="@string/average_number_of_activities"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <!-- Showcasing the all-time total -->
+    <!-- Showcasing the all-time total durations -->
     <TextView
         android:id="@+id/all_Time_Total"
         android:layout_width="wrap_content"
@@ -102,7 +102,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/WEEK_TOTAL"
+        app:layout_constraintTop_toBottomOf="@+id/TOTAL_ACTIVITIES"
         app:layout_constraintVertical_bias="0.26" />
     <TextView
         android:id="@+id/ALL_TIME_TOTAL"
@@ -118,7 +118,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <!-- Showcasing the all time average -->
+    <!-- Showcasing the all time average durations -->
     <TextView
         android:id="@+id/all_Time_Average"
         android:layout_width="wrap_content"
@@ -133,7 +133,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/WEEK_TOTAL"
+        app:layout_constraintTop_toBottomOf="@+id/TOTAL_ACTIVITIES"
         app:layout_constraintVertical_bias="0.389" />
     <TextView
         android:id="@+id/ALL_TIME_AVERAGE"
