@@ -27,6 +27,6 @@
     <string name="next">Next</string>
     <string name="email">Email</string>
     <string name="user_s">User\'s</string>
-    <string name="total_number_of_activities">Total Number of Activities</string>
-    <string name="average_number_of_activities">Average Number of Activities</string>
+    <string name="total_number_of_activities">Total Number of Activities:</string>
+    <string name="average_number_of_activities">Average Number of Activities:</string>
 </resources>
