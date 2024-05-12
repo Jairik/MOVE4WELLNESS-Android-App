@@ -34,7 +34,7 @@ public class MainHomepage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_homepage);
-        usernameText = findViewById(R.id.textView3);
+        usernameText = findViewById(R.id.username);
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
         setUsernameText();

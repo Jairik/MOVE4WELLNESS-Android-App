@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -45,6 +46,10 @@ public class ActivityTracker extends AppCompatActivity {
     float jumprope = 0.0f;
     float weightlifting = 0.0f;
     float situps = 0.0f;
+    int countJumprope = 0;
+    int countWeightlifting = 0;
+    int countSitups = 0;
+    String exerciseName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,7 +78,7 @@ public class ActivityTracker extends AppCompatActivity {
                         public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
                             for (QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
                                 //Access each document under the "activities" collection
-                                String exerciseName = documentSnapshot.getString("activity_name");
+                                exerciseName = documentSnapshot.getString("activity_name");
                                 Double duration = documentSnapshot.getDouble("duration");
                                 // Convert the duration to float
                                 durationFloat = duration != null ? duration.floatValue() : 0.0f;
@@ -83,18 +88,26 @@ public class ActivityTracker extends AppCompatActivity {
                                 if(exerciseName.equals("Jump Rope")){
                                     //Increment the jumprope duration
                                     jumprope += durationFloat;
+                                    countJumprope++;
                                 }
                                 else if(exerciseName.equals("Weightlifting")){
                                     //Increment the weightlifting duration
                                     weightlifting += durationFloat;
+                                    countWeightlifting++;
                                 }
                                 else{
                                     //Increment the situps duration
                                     situps += durationFloat;
+                                    countSitups++;
                                 }
+
                             }
                             //method call to create bar chart with user data
                             createBarChart(jumprope, weightlifting, situps);
+                            //sets average text on ActivityTracker XML
+                            setAverage("Jump Rope", jumprope, countJumprope);
+                            setAverage("Weightlifting", weightlifting, countWeightlifting);
+                            setAverage("Sit-ups", situps, countSitups);
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {
@@ -142,6 +155,26 @@ public class ActivityTracker extends AppCompatActivity {
         chart.getXAxis().setPosition(XAxis.XAxisPosition.BOTTOM);
         chart.getXAxis().setGranularity(1f);
         chart.getXAxis().setGranularityEnabled(true);
+    }
+
+    public void setAverage(String name, float exercise, int count){
+        TextView jumpropeAverage = findViewById(R.id.avgJumpRope);
+        TextView weightliftingAverage = findViewById(R.id.avgWeightLifting);
+        TextView situpsAverage = findViewById(R.id.avgSitUps);
+        float avg = exercise/count;
+        String avgString = Float.toString(avg) + " minutes";
+        if(name.equals("Jump Rope")){
+            //set jumprope avg duration text
+            jumpropeAverage.setText(avgString);
+        }
+        else if(name.equals("Weightlifting")){
+            //set weightlifting avg duration text
+            weightliftingAverage.setText(avgString);
+        }
+        else{
+            //set situps avg duration text
+            situpsAverage.setText(avgString);
+        }
     }
 
 
