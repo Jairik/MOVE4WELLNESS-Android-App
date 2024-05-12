@@ -21,7 +21,7 @@ public class MainHomepage extends AppCompatActivity {
         setContentView(R.layout.main_homepage);
     }
 
-    //redirects to noti screen
+    //redirects to notification screen
     public void onClickNotification(View view) {
         Intent intent = new Intent(MainHomepage.this, NotificationScreen.class);
         startActivity(intent);

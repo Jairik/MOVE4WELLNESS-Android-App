@@ -9,4 +9,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class ManagerGlobalMessage extends AppCompatActivity {
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.manager_global_message);
+    }
 }
