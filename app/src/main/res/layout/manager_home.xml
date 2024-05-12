@@ -31,6 +31,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="200dp"
+        android:layout_marginTop="149dp"
         android:layout_marginEnd="201dp"
         android:layout_marginBottom="548dp"
         android:fontFamily="@font/poppins"
@@ -40,7 +41,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TOTAL_ACTIVITIES" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/TOTAL_ACTIVITIES"
@@ -57,12 +58,15 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <!-- Showcasing the average amount of activities -->
+
     <TextView
         android:id="@+id/average_activities"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="200dp"
+        android:layout_marginTop="220dp"
         android:layout_marginEnd="201dp"
+        android:layout_marginBottom="477dp"
         android:fontFamily="@font/poppins"
         android:text="-"
         android:textColor="@color/purple"
@@ -71,8 +75,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TOTAL_ACTIVITIES"
-        app:layout_constraintVertical_bias="0.13" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/AVERAGE_ACTIVITIES"
@@ -90,12 +94,15 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <!-- Showcasing the all-time total durations -->
+
     <TextView
         android:id="@+id/all_Time_Total"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="200dp"
+        android:layout_marginTop="291dp"
         android:layout_marginEnd="201dp"
+        android:layout_marginBottom="395dp"
         android:fontFamily="@font/poppins"
         android:text="-"
         android:textColor="@color/purple"
@@ -104,8 +111,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TOTAL_ACTIVITIES"
-        app:layout_constraintVertical_bias="0.26" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.027" />
 
     <TextView
         android:id="@+id/ALL_TIME_TOTAL"
@@ -124,12 +131,15 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <!-- Showcasing the all time average durations -->
+
     <TextView
         android:id="@+id/all_Time_Average"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="200dp"
+        android:layout_marginTop="362dp"
         android:layout_marginEnd="201dp"
+        android:layout_marginBottom="204dp"
         android:fontFamily="@font/poppins"
         android:text="-"
         android:textColor="@color/purple"
@@ -138,8 +148,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TOTAL_ACTIVITIES"
-        app:layout_constraintVertical_bias="0.389" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.007" />
 
     <TextView
         android:id="@+id/ALL_TIME_AVERAGE"
@@ -178,7 +188,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="314dp"
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="47dp"
         android:layout_marginEnd="85dp"
         android:layout_marginBottom="660dp"
         android:fontFamily="@font/poppins"
@@ -189,7 +199,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TOTAL_USERS" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <!-- Making a button that swaps to the "search user" activity -->
 

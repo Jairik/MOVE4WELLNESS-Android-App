@@ -80,9 +80,13 @@ public class ManagerHome extends AppCompatActivity {
                     //For all documents in the users collection
                     for(QueryDocumentSnapshot doc : task.getResult()) {
                         //Get the statistics, and cast them to ints
-                        long currentExercisesL = doc.getLong("num_exercises");
+                        long currentExercisesL = 0, currentTotalDurationL = 0;
+                        try {
+                            currentExercisesL = doc.getLong("num_exercises");
+                            currentTotalDurationL = doc.getLong("total_minutes");
+                        }
+                        catch(NullPointerException e) {} //do nothing for now
                         int currentExercises = (int) currentExercisesL;
-                        long currentTotalDurationL = doc.getLong("total_minutes");
                         int currentTotalDuration = (int) currentTotalDurationL;
 
                         numUsers[0] += 1; //Incrementing by one
@@ -104,10 +108,9 @@ public class ManagerHome extends AppCompatActivity {
                     allTimeActivitiesText.setText(totalExercises);
                     allTimeAverageActivitiesText.setText(averageTotalExercises);
                 }
+                progressBar.setVisibility(View.INVISIBLE); //Hiding the progressbar when operation is complete
             }
         });
-        progressBar.setVisibility(View.INVISIBLE); //Hiding the progressbar when operation is complete
     }
-
 
 }
