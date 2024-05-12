@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -145,4 +146,8 @@ public class ActivityTracker extends AppCompatActivity {
     }
 
 
+    public void onClickGoBack(View view) {
+        Intent intent = new Intent(ActivityTracker.this, MainHomepage.class);
+        startActivity(intent);
+    }
 }
