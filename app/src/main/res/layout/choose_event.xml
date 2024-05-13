@@ -79,15 +79,10 @@
 
     <Spinner
         android:id="@+id/spinner"
+        
         android:layout_width="263dp"
         android:layout_height="36dp"
-        android:layout_marginStart="92dp"
-        android:layout_marginTop="457dp"
-        android:layout_marginEnd="56dp"
-        android:layout_marginBottom="238dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteX="85dp"
+        tools:layout_editor_absoluteY="457dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

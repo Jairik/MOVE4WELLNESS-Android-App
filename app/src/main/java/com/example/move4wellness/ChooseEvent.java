@@ -74,7 +74,7 @@ public class ChooseEvent extends AppCompatActivity {
         Map<String, Object> eventYear = new HashMap<>();
         eventYear.put("event", year);
         //Add this to the database
-        db.collection("users").document(UID).set(eventYear);
+        db.collection("users").document(UID).update(eventYear);
     }
 
 }
