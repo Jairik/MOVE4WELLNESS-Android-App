@@ -22,7 +22,6 @@ public class AllUserActivities extends AppCompatActivity {
     FirebaseUser user;
     FirebaseFirestore db;
     DocumentReference userRef;
-
     String UID;
 
     @Override

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -125,6 +126,7 @@ public class ActivityTracker extends AppCompatActivity {
     //If there is somehow no user signed in, will redirect to login/register page
     private void noUserDetected() {
         Intent intent = new Intent(ActivityTracker.this, MainActivity.class);
+        startActivity(intent);
     }
 
     //Creates bar chart with user data passed in
@@ -175,6 +177,16 @@ public class ActivityTracker extends AppCompatActivity {
             //set situps avg duration text
             situpsAverage.setText(avgString);
         }
+    }
+
+    public void onClickGoUserHistory(View view){
+        Intent intent = new Intent(ActivityTracker.this, AllUserActivities.class);
+        startActivity(intent);
+    }
+
+    public void onClickGoHomePage(View view){
+        Intent intent = new Intent(ActivityTracker.this, MainHomepage.class);
+        startActivity(intent);
     }
 
 
