@@ -15,9 +15,9 @@
         android:fontFamily="@font/poppins_extrabold"
         android:text="@string/manager_s_edition"
         android:textColor="@color/purple"
-        android:textSize="30sp"
+        android:textSize="40sp"
         android:layout_gravity="center"
-        android:layout_marginBottom="8dp"/>
+        android:layout_marginBottom="4dp"/>
 
     <!-- Showcasing the total number of users in the database -->
     <TextView
@@ -26,9 +26,9 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_extrabold"
         android:text="@string/total_users"
-        android:textSize="16sp"
+        android:textSize="22sp"
         android:layout_gravity="center"
-        android:layout_marginBottom="2dp"/>
+        android:layout_marginBottom="0dp"/>
 
     <TextView
         android:id="@+id/total_Users"
@@ -37,9 +37,9 @@
         android:fontFamily="@font/poppins"
         android:text="@string/dash"
         android:textColor="@color/purple"
-        android:textSize="20sp"
+        android:textSize="22sp"
         android:layout_gravity="center"
-        android:layout_marginBottom="8dp"/>
+        android:layout_marginBottom="6dp"/>
 
     <!-- Showcasing the total number of activities -->
     <TextView
@@ -50,7 +50,7 @@
         android:text="@string/total_number_of_activities"
         android:textSize="20sp"
         android:layout_gravity="center"
-        android:layout_marginBottom="2dp"/>
+        android:layout_marginBottom="0dp"/>
 
     <TextView
         android:id="@+id/total_activities"
@@ -61,7 +61,7 @@
         android:textColor="@color/purple"
         android:textSize="20sp"
         android:layout_gravity="center"
-        android:layout_marginBottom="8dp"/>
+        android:layout_marginBottom="6dp"/>
 
     <!-- Showcasing the average amount of activities -->
     <TextView
@@ -72,7 +72,7 @@
         android:text="@string/average_number_of_activities"
         android:textSize="20sp"
         android:layout_gravity="center"
-        android:layout_marginBottom="2dp"/>
+        android:layout_marginBottom="0dp"/>
 
     <TextView
         android:id="@+id/average_activities"
@@ -83,7 +83,7 @@
         android:textColor="@color/purple"
         android:textSize="20sp"
         android:layout_gravity="center"
-        android:layout_marginBottom="8dp"/>
+        android:layout_marginBottom="6dp"/>
 
     <!-- Showcasing the all-time total durations -->
     <TextView
@@ -94,7 +94,7 @@
         android:text="@string/all_time_total"
         android:textSize="20sp"
         android:layout_gravity="center"
-        android:layout_marginBottom="2dp"/>
+        android:layout_marginBottom="0dp"/>
 
     <TextView
         android:id="@+id/all_Time_Total"
@@ -105,7 +105,7 @@
         android:textColor="@color/purple"
         android:textSize="20sp"
         android:layout_gravity="center"
-        android:layout_marginBottom="8dp"/>
+        android:layout_marginBottom="6dp"/>
 
     <!-- Showcasing the all-time average durations -->
     <TextView
@@ -116,7 +116,7 @@
         android:text="@string/all_time_average"
         android:textSize="20sp"
         android:layout_gravity="center"
-        android:layout_marginBottom="2dp"/>
+        android:layout_marginBottom="0dp"/>
 
     <TextView
         android:id="@+id/all_Time_Average"
