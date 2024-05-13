@@ -1,256 +1,161 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <!-- Text that will be modified to display the totals -->
-
-    <TextView
-        android:id="@+id/total_activities"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="200dp"
-        android:layout_marginTop="149dp"
-        android:layout_marginEnd="201dp"
-        android:layout_marginBottom="548dp"
-        android:fontFamily="@font/poppins"
-        android:text="@string/dash"
-        android:textColor="@color/purple"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/all_Time_Average"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="200dp"
-        android:layout_marginTop="362dp"
-        android:layout_marginEnd="201dp"
-        android:layout_marginBottom="204dp"
-        android:fontFamily="@font/poppins"
-        android:text="@string/dash5"
-        android:textColor="@color/purple"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/total_Users"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="317dp"
-        android:layout_marginTop="54dp"
-        android:layout_marginEnd="85dp"
-        android:layout_marginBottom="650dp"
-        android:fontFamily="@font/poppins"
-        android:text="@string/awaiting"
-        android:textColor="@color/purple"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/all_Time_Total"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="200dp"
-        android:layout_marginTop="291dp"
-        android:layout_marginEnd="201dp"
-        android:layout_marginBottom="395dp"
-        android:fontFamily="@font/poppins"
-        android:text="@string/dash3"
-        android:textColor="@color/purple"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/average_activities"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="200dp"
-        android:layout_marginTop="220dp"
-        android:layout_marginEnd="201dp"
-        android:layout_marginBottom="477dp"
-        android:fontFamily="@font/poppins"
-        android:text="@string/dash2"
-        android:textColor="@color/purple"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <!-- Loading bar, visible when loading text -->
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
 
     <!-- Top text for visual appeal -->
-
-    <ProgressBar
-        android:id="@+id/progress_bar"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="89dp"
-        android:layout_height="96dp"
-        android:layout_marginStart="185dp"
-        android:layout_marginTop="397dp"
-        android:layout_marginEnd="185dp"
-        android:layout_marginBottom="287dp"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/MANAGERS_EDITION"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="23dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="277dp"
-        android:layout_marginBottom="696dp"
         android:fontFamily="@font/poppins_extrabold"
         android:text="@string/manager_s_edition"
         android:textColor="@color/purple"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <!-- Showcasing the total number of activities -->
-
-    <TextView
-        android:id="@+id/TOTAL_ACTIVITIES"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="140dp"
-        android:layout_marginEnd="140dp"
-        android:layout_marginBottom="583dp"
-        android:fontFamily="@font/poppins_extrabold"
-        android:text="@string/total_number_of_activities"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <!-- Showcasing the average amount of activities -->
-
-    <TextView
-        android:id="@+id/AVERAGE_ACTIVITIES"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="140dp"
-        android:layout_marginEnd="140dp"
-        android:layout_marginBottom="512dp"
-        android:fontFamily="@font/poppins_extrabold"
-        android:text="@string/average_number_of_activities"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <!-- Showcasing the all-time total durations -->
-
-
-    <TextView
-        android:id="@+id/ALL_TIME_TOTAL"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="137dp"
-        android:layout_marginTop="256dp"
-        android:layout_marginEnd="133dp"
-        android:layout_marginBottom="440dp"
-        android:fontFamily="@font/poppins_extrabold"
-        android:text="@string/all_time_total"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <!-- Showcasing the all time average durations -->
-
-
-    <TextView
-        android:id="@+id/ALL_TIME_AVERAGE"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="140dp"
-        android:layout_marginEnd="140dp"
-        android:layout_marginBottom="368dp"
-        android:fontFamily="@font/poppins_extrabold"
-        android:text="@string/all_time_average"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textSize="30sp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="8dp"/>
 
     <!-- Showcasing the total number of users in the database -->
     <TextView
         android:id="@+id/TOTAL_USERS"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="106dp"
-        android:layout_marginTop="19dp"
-        android:layout_marginEnd="34dp"
-        android:layout_marginBottom="684dp"
         android:fontFamily="@font/poppins_extrabold"
         android:text="@string/total_users"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/MANAGERS_EDITION"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_gravity="center"
+        android:layout_marginBottom="2dp"/>
 
+    <TextView
+        android:id="@+id/total_Users"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:text="@string/dash"
+        android:textColor="@color/purple"
+        android:textSize="20sp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="8dp"/>
 
-    <!-- Making a button that swaps to the "search user" activity -->
+    <!-- Showcasing the total number of activities -->
+    <TextView
+        android:id="@+id/TOTAL_ACTIVITIES"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_extrabold"
+        android:text="@string/total_number_of_activities"
+        android:textSize="20sp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="2dp"/>
 
-    <!-- Making a button that swaps to the "all users" activity, which shows
-     all users in a sample list-like format -->
+    <TextView
+        android:id="@+id/total_activities"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:text="@string/dash"
+        android:textColor="@color/purple"
+        android:textSize="20sp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="8dp"/>
 
-    <!-- Making a button that swaps to the "send global message" activity, which
-     allows for managers accounts to craft a message to send to everybody -->
+    <!-- Showcasing the average amount of activities -->
+    <TextView
+        android:id="@+id/AVERAGE_ACTIVITIES"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_extrabold"
+        android:text="@string/average_number_of_activities"
+        android:textSize="20sp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="2dp"/>
 
+    <TextView
+        android:id="@+id/average_activities"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:text="@string/dash2"
+        android:textColor="@color/purple"
+        android:textSize="20sp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- Showcasing the all-time total durations -->
+    <TextView
+        android:id="@+id/ALL_TIME_TOTAL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_extrabold"
+        android:text="@string/all_time_total"
+        android:textSize="20sp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="2dp"/>
+
+    <TextView
+        android:id="@+id/all_Time_Total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:text="@string/dash3"
+        android:textColor="@color/purple"
+        android:textSize="20sp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- Showcasing the all-time average durations -->
+    <TextView
+        android:id="@+id/ALL_TIME_AVERAGE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_extrabold"
+        android:text="@string/all_time_average"
+        android:textSize="20sp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="2dp"/>
+
+    <TextView
+        android:id="@+id/all_Time_Average"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:text="@string/dash5"
+        android:textColor="@color/purple"
+        android:textSize="20sp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="2dp"/>
+
+    <!-- Loading bar, visible when loading text -->
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:layout_gravity="center"
+        android:layout_marginBottom="2dp"/>
+
+    <!-- Buttons to navigate to different activities -->
     <Button
         android:id="@+id/all_Users"
         android:layout_width="195dp"
         android:layout_height="70dp"
-        android:layout_marginStart="108dp"
-        android:layout_marginTop="492dp"
-        android:layout_marginEnd="108dp"
-        android:layout_marginBottom="169dp"
         android:onClick="onClickSeeAllUsers"
         android:text="@string/all_users"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_gravity="center"
+        android:layout_marginBottom="12dp"/>
 
     <Button
         android:id="@+id/send_Global_Message"
         android:layout_width="195dp"
         android:layout_height="70dp"
-        android:layout_marginStart="108dp"
-        android:layout_marginTop="583dp"
-        android:layout_marginEnd="108dp"
-        android:layout_marginBottom="78dp"
         android:onClick="onClickSendGlobalMessage"
         android:text="@string/send_global"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_gravity="center"
+        android:layout_marginBottom="12dp"/>
 
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

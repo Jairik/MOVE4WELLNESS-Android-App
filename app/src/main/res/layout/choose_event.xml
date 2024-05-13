@@ -79,7 +79,6 @@
 
     <Spinner
         android:id="@+id/spinner"
-        
         android:layout_width="263dp"
         android:layout_height="36dp"
         tools:layout_editor_absoluteX="85dp"

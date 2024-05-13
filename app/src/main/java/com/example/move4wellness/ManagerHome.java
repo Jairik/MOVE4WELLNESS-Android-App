@@ -101,7 +101,6 @@ public class ManagerHome extends AppCompatActivity {
                     String averageTotalExercisesString = String.valueOf((numExercises[0]) / numUsers[0]) + " per user";
 
                     //Replacing edit-text fields
-                    //PROBLEM: THIS ISNT SHOWING UP AT ALL
                     totalUsersText.setText("Testing");
                     allTimeTotalText.setText(totalDurationString);
                     allTimeAverageText.setText(averageDurationString);
