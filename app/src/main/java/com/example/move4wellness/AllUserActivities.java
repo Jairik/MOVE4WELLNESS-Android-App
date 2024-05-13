@@ -85,8 +85,9 @@ public class AllUserActivities extends AppCompatActivity {
                         //Access each document under the "activities" collection
                         String exerciseName = documentSnapshot.getString("activity_name");
                         Double duration = documentSnapshot.getDouble("duration");
+                        String dateOfExercise = documentSnapshot.getString("date");
                         //Combine the information into one string
-                        String combinedInfo = exerciseName + ": " + duration + " minutes";
+                        String combinedInfo = getCombinedInfo(exerciseName, duration, dateOfExercise);
                         //Add to the list
                         aList.add(combinedInfo);
                     }
@@ -95,5 +96,18 @@ public class AllUserActivities extends AppCompatActivity {
                 }
             });
         }
+
+    /* Formatting the String so it appears correctly in the textview */
+    private String getCombinedInfo(String exerciseName, Double duration, String dateOfExercise) {
+        String combinedInfo;
+        String spaces = "                     "; //Maxes out spaces so it appears on the far right
+        if(dateOfExercise != null) {
+            combinedInfo = exerciseName + ": " + duration + " minutes" + spaces + dateOfExercise;
+        }
+        else {
+            combinedInfo = exerciseName + ": " + duration + " minutes";
+        }
+        return combinedInfo;
+    }
 
 }
