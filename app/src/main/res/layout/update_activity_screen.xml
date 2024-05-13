@@ -43,10 +43,9 @@
         android:src="@drawable/couple_fitness"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView9"
-        app:layout_constraintVertical_bias="0.529" />
+        app:layout_constraintVertical_bias="0.584" />
 
     <Button
         android:id="@+id/button5"
@@ -66,11 +65,12 @@
         android:id="@+id/imageView6"
         android:layout_width="337dp"
         android:layout_height="106dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView2"
+        app:layout_constraintBottom_toTopOf="@+id/imageView9"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView9"
-        app:layout_constraintVertical_bias="0.222"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/update_time" />
 
     <EditText
@@ -88,5 +88,35 @@
         app:layout_constraintEnd_toEndOf="@+id/imageView6"
         app:layout_constraintStart_toStartOf="@+id/imageView6"
         app:layout_constraintTop_toTopOf="@+id/imageView6" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="337dp"
+        android:layout_height="106dp"
+        android:layout_marginBottom="24dp"
+        android:adjustViewBounds="true"
+        android:background="#00000000"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/enter_exercise_date" />
+
+    <EditText
+        android:id="@+id/editTextDate"
+        android:layout_width="231dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="51dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="55dp"
+        android:layout_marginBottom="29dp"
+        android:ems="10"
+        android:inputType="date"
+        android:hint="MM/DD/YYYY"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView9"
+        app:layout_constraintEnd_toEndOf="@+id/imageView9"
+        app:layout_constraintStart_toStartOf="@+id/imageView9"
+        app:layout_constraintTop_toTopOf="@+id/imageView9" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

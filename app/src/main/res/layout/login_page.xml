@@ -107,6 +107,8 @@
         android:backgroundTint="#AC61F6"
         android:onClick="onClickHomepage"
         android:text="@string/login"
+        android:textSize="20sp"
+        android:fontFamily="@font/poppins_extrabold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

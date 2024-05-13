@@ -9,10 +9,10 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="104dp"
-        android:layout_height="25dp"
-        android:text="@string/welcome_back"
+        android:layout_width="124dp"
+        android:layout_height="23dp"
         android:fontFamily="@font/poppins"
+        android:text="@string/welcome_back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.052"

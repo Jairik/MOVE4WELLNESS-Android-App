@@ -92,12 +92,13 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="320dp"
-        android:layout_height="63dp"
+        android:layout_width="299dp"
+        android:layout_height="61dp"
         android:backgroundTint="#AC61F6"
         android:onClick="onClickHomepage"
         android:text="@string/next"
         android:textSize="20sp"
+        android:fontFamily="@font/poppins_extrabold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
