@@ -2,7 +2,7 @@ package com.example.move4wellness;
 
 /* Manager see users page class
  * Description:
- * Redirects to: The user that the manager click's */
+ * Redirects to: The user that the manager clicks */
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -54,7 +54,6 @@ public class ManagerSeeUsers extends AppCompatActivity {
                     Log.e("ManagerSeeUsers", "UID is null");
                 }
                 else {
-                    Log.d("ManagerSeeUsers", "UID is not null, moving to next activity");
                     Intent intent = new Intent(ManagerSeeUsers.this, AllUserActivities.class);
                     intent.putExtra("user_UID", UID);
                     startActivity(intent);
