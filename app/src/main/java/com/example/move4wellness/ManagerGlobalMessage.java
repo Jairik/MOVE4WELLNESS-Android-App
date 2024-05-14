@@ -54,4 +54,10 @@ public class ManagerGlobalMessage extends AppCompatActivity {
         //Add the new document to the notifications collection
         db.collection("notifications").add(notiData);
     }
+
+    /* On click for the back button, redirects to manager home page */
+    public void onClickGoBackManager(View view) {
+        Intent intent = new Intent(ManagerGlobalMessage.this, ManagerHome.class);
+        startActivity(intent);
+    }
 }

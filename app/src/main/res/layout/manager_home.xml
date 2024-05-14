@@ -5,19 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="0dp">
 
     <!-- Top text for visual appeal -->
     <TextView
         android:id="@+id/MANAGERS_EDITION"
-        android:layout_width="wrap_content"
+        android:layout_width="382dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="20dp"
         android:fontFamily="@font/poppins_extrabold"
         android:text="@string/manager_s_edition"
+        android:textAlignment="center"
         android:textColor="@color/purple"
-        android:textSize="40sp"
-        android:layout_gravity="center"
-        android:layout_marginBottom="4dp"/>
+        android:textSize="40sp" />
 
     <!-- Showcasing the total number of users in the database -->
     <TextView
@@ -39,7 +41,7 @@
         android:textColor="@color/purple"
         android:textSize="22sp"
         android:layout_gravity="center"
-        android:layout_marginBottom="6dp"/>
+        android:layout_marginBottom="10dp"/>
 
     <!-- Showcasing the total number of activities -->
     <TextView
@@ -61,7 +63,7 @@
         android:textColor="@color/purple"
         android:textSize="20sp"
         android:layout_gravity="center"
-        android:layout_marginBottom="6dp"/>
+        android:layout_marginBottom="10dp"/>
 
     <!-- Showcasing the average amount of activities -->
     <TextView
@@ -83,7 +85,7 @@
         android:textColor="@color/purple"
         android:textSize="20sp"
         android:layout_gravity="center"
-        android:layout_marginBottom="6dp"/>
+        android:layout_marginBottom="10dp"/>
 
     <!-- Showcasing the all-time total durations -->
     <TextView
@@ -105,7 +107,7 @@
         android:textColor="@color/purple"
         android:textSize="20sp"
         android:layout_gravity="center"
-        android:layout_marginBottom="6dp"/>
+        android:layout_marginBottom="10dp"/>
 
     <!-- Showcasing the all-time average durations -->
     <TextView
@@ -127,7 +129,7 @@
         android:textColor="@color/purple"
         android:textSize="20sp"
         android:layout_gravity="center"
-        android:layout_marginBottom="2dp"/>
+        android:layout_marginBottom="20dp"/>
 
     <!-- Loading bar, visible when loading text -->
     <ProgressBar
@@ -137,25 +139,25 @@
         android:layout_height="wrap_content"
         android:visibility="invisible"
         android:layout_gravity="center"
-        android:layout_marginBottom="2dp"/>
+        android:layout_marginBottom="25dp"/>
 
     <!-- Buttons to navigate to different activities -->
     <Button
         android:id="@+id/all_Users"
-        android:layout_width="195dp"
+        android:layout_width="236dp"
         android:layout_height="70dp"
-        android:onClick="onClickSeeAllUsers"
-        android:text="@string/all_users"
         android:layout_gravity="center"
-        android:layout_marginBottom="12dp"/>
+        android:layout_marginBottom="25dp"
+        android:onClick="onClickSeeAllUsers"
+        android:text="@string/all_users" />
 
     <Button
         android:id="@+id/send_Global_Message"
-        android:layout_width="195dp"
+        android:layout_width="236dp"
         android:layout_height="70dp"
-        android:onClick="onClickSendGlobalMessage"
-        android:text="@string/send_global"
         android:layout_gravity="center"
-        android:layout_marginBottom="12dp"/>
+        android:layout_marginBottom="12dp"
+        android:onClick="onClickSendGlobalMessage"
+        android:text="@string/send_global" />
 
 </LinearLayout>
