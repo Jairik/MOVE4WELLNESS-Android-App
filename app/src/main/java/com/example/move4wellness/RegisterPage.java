@@ -26,7 +26,10 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -113,10 +116,12 @@ public class RegisterPage extends AppCompatActivity {
             userData.put("isManager", false); //Setting user to not be a manager
             userData.put("total_minutes", 0); //Initializing total_minutes
             userData.put("num_exercises", 0); //Initializing num_exercises
+            userData.put("unseen_notifications", true);
             db.collection("users").document(userUID).set(userData)
             .addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override
                 public void onSuccess(Void aVoid) {
+                    pullNotificationsFromDatabase(userUID);
                     userAdded = true;
                 }
             })
@@ -129,4 +134,26 @@ public class RegisterPage extends AppCompatActivity {
         }
     }
 
+    /*Pulls all notifications from the global "notifications" collection, adding them to the user's
+    notification collection*/
+    private void pullNotificationsFromDatabase(String userUID) {
+        //Query through all notifications
+        db.collection("notifications").get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if(task.isSuccessful()) {
+                            for(QueryDocumentSnapshot doc : task.getResult()) {
+                                //Store the current message in a hashmap
+                                Map<String, Object> notificationList = new HashMap<>();
+                                String curMessage = doc.getString("message");
+                                notificationList.put("message", curMessage);
+                                //Add this message to the user's collection
+                                db.collection("users").document(userUID)
+                                        .collection("notifications").add(notificationList);
+                            }
+                        }
+                    }
+                });
+    }
 }
