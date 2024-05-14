@@ -9,11 +9,13 @@
 
     <ListView
         android:id="@+id/listViewNotifications"
-        android:layout_width="410dp"
-        android:layout_height="776dp"
-        android:layout_marginTop="114dp"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="0dp" />
+        android:layout_width="409dp"
+        android:layout_height="668dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView8"
