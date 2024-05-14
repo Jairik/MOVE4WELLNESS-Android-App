@@ -318,7 +318,7 @@ public class ActivityTracker extends AppCompatActivity implements AdapterView.On
                                 System.out.println("Activity date: " + activityDate.getTime());
 
                                 // Check if the activity date is within or on the current week
-                                if (!activityDate.before(startOfWeek) || isSameDay(activityDate, startOfWeek)) {
+                                if (isSameDay(activityDate, startOfWeek) || !activityDate.before(startOfWeek)) {
                                     // Calculate the day index (0 for Sunday, 1 for Monday, ..., 6 for Saturday)
                                     int dayIndex = activityDate.get(Calendar.DAY_OF_WEEK) - Calendar.SUNDAY;
 
@@ -350,10 +350,24 @@ public class ActivityTracker extends AppCompatActivity implements AdapterView.On
     }
 
     // Helper method to check if two Calendar instances represent the same day
-    private boolean isSameDay(Calendar cal1, Calendar cal2) {
+    private boolean isSameDay(Calendar activityDate, Calendar startOfWeek) {
+
+        activityDate.set(Calendar.HOUR_OF_DAY, 0);
+        activityDate.set(Calendar.MINUTE, 0);
+        activityDate.set(Calendar.SECOND, 0);
+        activityDate.set(Calendar.MILLISECOND, 0);
+
+        startOfWeek.set(Calendar.HOUR_OF_DAY, 0);
+        startOfWeek.set(Calendar.MINUTE, 0);
+        startOfWeek.set(Calendar.SECOND, 0);
+        startOfWeek.set(Calendar.MILLISECOND, 0);
+        return activityDate.getTimeInMillis() == startOfWeek.getTimeInMillis();
+        /*
         return cal1.get(Calendar.YEAR) == cal2.get(Calendar.YEAR) &&
                 cal1.get(Calendar.MONTH) == cal2.get(Calendar.MONTH) &&
                 cal1.get(Calendar.DAY_OF_MONTH) == cal2.get(Calendar.DAY_OF_MONTH);
+                */
+
     }
 
     public void getMonthlyActivities() {
