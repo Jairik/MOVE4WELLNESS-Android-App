@@ -8,6 +8,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -27,6 +29,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 public class MainHomepage extends AppCompatActivity {
     TextView usernameText;
+    ImageButton notificationBellImage;
     FirebaseAuth auth;
     FirebaseUser user;
     TextView eventyear;
@@ -36,9 +39,10 @@ public class MainHomepage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_homepage);
         usernameText = findViewById(R.id.username);
+        notificationBellImage = findViewById(R.id.imageButton);
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
-        setUsernameText();
+        setUsernameText(); //Also updates notification bell
         getEventYear();
     }
 
@@ -60,8 +64,17 @@ public class MainHomepage extends AppCompatActivity {
                 if(task.isSuccessful()) {
                     DocumentSnapshot doc = task.getResult();
                     if(doc.exists()) {
+                        //Set the username
                         String userName = doc.getString("username");
                         usernameText.setText(userName);
+                        //Set the notification bell image
+                        boolean unseenNotifications = Boolean.TRUE.equals(doc.getBoolean("unseen_notification"));
+                        if(unseenNotifications) {
+                            Log.e("Main Homepage", "User has unseen notifications");
+                            //Update the imageView
+                            int unseenNotiBellID = (R.drawable.notificationbell_red);
+                            notificationBellImage.setImageResource(unseenNotiBellID);
+                        }
                     }
                 }
             }
