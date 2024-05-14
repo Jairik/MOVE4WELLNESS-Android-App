@@ -30,7 +30,7 @@ public class ManagerSeeUsers extends AppCompatActivity {
     ListView listView;
     ArrayList<String> userNames;
     ArrayList<String> userNameUIDs; //Holds UIDs for all users in userNames
-    userListAdapter adapter;
+    ArrayAdapter<String> adapter;
     SearchView searchView;
 
     @Override
@@ -44,23 +44,11 @@ public class ManagerSeeUsers extends AppCompatActivity {
         adapter = new userListAdapter(this, android.R.layout.simple_list_item_1, userNames);
         listView.setAdapter(adapter);
         //Setting up the search view
-        searchView = findViewById(R.id.searchView);
+        /*searchView = findViewById(R.id.searchView);
         searchView.clearFocus();
         searchView.setEnabled(true);
-        searchView.setFocusable(true);
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+        searchView.setFocusable(true); */
 
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                return false;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                filterList(newText);
-                return false;
-            }
-        });
         //Initializing user and auth objects
         db = FirebaseFirestore.getInstance();
         setList();
@@ -80,16 +68,6 @@ public class ManagerSeeUsers extends AppCompatActivity {
                 }
             }
         });
-    }
-
-    private void filterList(String text) {
-        List<String> filteredList = new ArrayList<>();
-        for(String item : userNames) {
-            if(item.toLowerCase().contains(text.toLowerCase())) {
-                filteredList.add(item);
-            }
-        }
-        adapter.setFilteredList(filteredList);
     }
 
     //Set all of the items in listView with items from the database
