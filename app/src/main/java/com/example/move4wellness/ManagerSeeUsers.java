@@ -86,5 +86,10 @@ public class ManagerSeeUsers extends AppCompatActivity {
                 });
     }
 
+    /* On click for the back button, redirects to manager home page */
+    public void onClickGoBackManager(View view) {
+        Intent intent = new Intent(ManagerSeeUsers.this, ManagerHome.class);
+        startActivity(intent);
+    }
 
 }

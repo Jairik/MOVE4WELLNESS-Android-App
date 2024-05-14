@@ -124,6 +124,10 @@ public class AllUserActivities extends AppCompatActivity {
 
 
     public void onClickGoBack(View view) {
+
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        FirebaseUser user = auth.getCurrentUser();
+        UID = user.getUid();
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         DocumentReference userRef = db.collection("users").document(UID);
 
