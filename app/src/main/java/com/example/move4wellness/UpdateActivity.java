@@ -61,7 +61,7 @@ public class UpdateActivity extends AppCompatActivity {
         exerciseName = findViewById(R.id.textView9);
         exerciseName.setText(ENAME);
         //Getting the edit text-field
-        timeEditText = findViewById(R.id.editTextTime);
+        dEditText = findViewById(R.id.editTextTime);
         date = findViewById(R.id.editTextDate);
         //Getting the current user
         auth = FirebaseAuth.getInstance();
