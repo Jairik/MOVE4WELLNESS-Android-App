@@ -80,6 +80,15 @@ public class ActivityTracker extends AppCompatActivity implements AdapterView.On
         db = FirebaseFirestore.getInstance();
         /*Getting the current userUID, getting the database, and establishing a reference to the
          * current user in the 'user' collection */
+
+        if(user != null) {
+            uniqueUserID = user.getUid();
+            userRef = db.collection("users").document(uniqueUserID);
+        }
+        else { //No user is signed in, redirect to main activity
+            noUserDetected(); //Go back to first welcome screen
+        }
+
         spinner = findViewById(R.id.tracktime);
         // Define spinner options
         String[] options = {"Total", "Week", "Month"};
@@ -89,13 +98,6 @@ public class ActivityTracker extends AppCompatActivity implements AdapterView.On
         // Set adapter to spinner
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
-        if(user != null) {
-            uniqueUserID = user.getUid();
-            userRef = db.collection("users").document(uniqueUserID);
-        }
-        else { //No user is signed in, redirect to main activity
-            noUserDetected(); //Go back to first welcome screen
-        }
         //initial graph will be year to date
         getTotal();
     }
