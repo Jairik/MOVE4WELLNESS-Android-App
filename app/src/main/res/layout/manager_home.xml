@@ -144,19 +144,25 @@
     <!-- Buttons to navigate to different activities -->
     <Button
         android:id="@+id/all_Users"
-        android:layout_width="236dp"
-        android:layout_height="70dp"
+        android:layout_width="299dp"
+        android:layout_height="61dp"
         android:layout_gravity="center"
+        android:backgroundTint="#AC61F6"
         android:layout_marginBottom="25dp"
+        android:textSize="20sp"
+        android:fontFamily="@font/poppins_extrabold"
         android:onClick="onClickSeeAllUsers"
         android:text="@string/all_users" />
 
     <Button
         android:id="@+id/send_Global_Message"
-        android:layout_width="236dp"
-        android:layout_height="70dp"
+        android:layout_width="299dp"
+        android:layout_height="61dp"
         android:layout_gravity="center"
         android:layout_marginBottom="12dp"
+        android:textSize="20sp"
+        android:fontFamily="@font/poppins_extrabold"
+        android:backgroundTint="#AC61F6"
         android:onClick="onClickSendGlobalMessage"
         android:text="@string/send_global" />
 
