@@ -5,6 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="120dp">
 
+    <!-- Custom list view for the all_user_activities list view -->
+
     <ImageView
         android:id="@+id/image"
         android:layout_width="80dp"
@@ -25,8 +27,9 @@
         android:layout_marginStart="76dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="93dp"
+        android:fontFamily="@font/poppins"
         android:text="@string/name_duration"
-        android:textSize="22sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.245"
         app:layout_constraintStart_toStartOf="@+id/image"
@@ -40,7 +43,8 @@
         android:layout_marginTop="38dp"
         android:layout_marginEnd="207dp"
         android:text="@string/date"
-        android:textSize="15sp"
+        android:fontFamily="@font/poppins"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/image"
         app:layout_constraintTop_toTopOf="@+id/title"
