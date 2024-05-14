@@ -7,22 +7,23 @@
     tools:context=".LoginPage">
 
     <!-- Top instructions text -->
+
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="244dp"
-        android:layout_height="448dp"
+        android:layout_width="305dp"
+        android:layout_height="590dp"
         android:layout_marginStart="83dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="84dp"
         android:layout_marginBottom="64dp"
+        android:adjustViewBounds="true"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Login_Password"
         app:layout_constraintTop_toTopOf="@+id/login_name"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/login_register_girl" />
 
     <TextView
@@ -75,6 +76,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Adding finish button that redirects user -->
+
+    <!-- Adding picture -->
+
     <EditText
         android:id="@+id/Login_Password"
         android:layout_width="wrap_content"
@@ -89,13 +94,11 @@
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_name"
+        app:layout_constraintVertical_bias="0.052"
         tools:text="" />
-
-    <!-- Adding finish button that redirects user -->
-
-    <!-- Adding picture -->
 
     <Button
         android:id="@+id/Register_Register"
