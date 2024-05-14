@@ -9,26 +9,25 @@
 
     <ListView
         android:id="@+id/listViewNotifications"
-        android:layout_width="409dp"
-        android:layout_height="668dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="410dp"
+        android:layout_height="776dp"
+        android:layout_marginTop="114dp"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.968" />
+        tools:layout_editor_absoluteX="0dp" />
 
     <TextView
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_extrabold"
-        android:text="Notification"
-        android:textSize="20sp"
+        android:text="@string/notifications"
+        android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.022" />
+        app:layout_constraintVertical_bias="0.042" />
 
     <ImageButton
         android:id="@+id/imageButton2"
@@ -36,8 +35,8 @@
         android:layout_height="56dp"
         android:adjustViewBounds="true"
         android:background="#00000000"
-        android:scaleType="fitCenter"
         android:onClick="onClickGoBack"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/textView8"
         app:layout_constraintHorizontal_bias="0.186"
