@@ -157,6 +157,7 @@ public class ActivityTracker extends AppCompatActivity implements AdapterView.On
 
     public void onClickGoUserHistory(View view){
         Intent intent = new Intent(ActivityTracker.this, AllUserActivities.class);
+        intent.putExtra("user_UID", uniqueUserID);
         startActivity(intent);
     }
 

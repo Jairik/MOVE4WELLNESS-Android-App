@@ -2,6 +2,7 @@ package com.example.move4wellness;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -69,7 +70,7 @@ public class AllUserActivities extends AppCompatActivity {
                 if(task.isSuccessful()) {
                     DocumentSnapshot doc = task.getResult();
                     if(doc.exists()) {
-                        String username = doc.getString("username");
+                        String username = doc.getString("username") + "'s";
                         userNameInput.setText(username);
                     }
                 }
@@ -122,4 +123,33 @@ public class AllUserActivities extends AppCompatActivity {
         }
 
 
+    public void onClickGoBack(View view) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        DocumentReference userRef = db.collection("users").document(UID);
+
+        //Get the value of the "isManager" field and redirect to appropriate activity
+        userRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if(task.isSuccessful()) {
+                    DocumentSnapshot doc = task.getResult();
+                    if(doc.exists()) {
+                        boolean isManager = Boolean.TRUE.equals(doc.getBoolean("isManager"));
+                        Intent intent;
+                        if(isManager) { //User is a manager, redirect to manager home page
+                            intent = new Intent(AllUserActivities.this, ManagerHome.class);
+                        }
+                        else { //User is not a manager, redirect to normal homepage
+                            intent = new Intent(AllUserActivities.this, MainHomepage.class);
+                        }
+                        startActivity(intent);
+                    }
+                }
+                else { //Error - navigate to normal homepage
+                    Intent intent = new Intent(AllUserActivities.this, MainHomepage.class);
+                    startActivity(intent);
+                }
+            }
+        });
+    }
 }

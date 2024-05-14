@@ -36,7 +36,7 @@
         android:layout_marginBottom="8dp"
         android:fontFamily="@font/poppins"
         android:text="@string/HELLO_TEXT"
-        android:textSize="20sp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/WELCOME_BACK_TEXT"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,6 +45,7 @@
     <!-- Adding editTextViews for full name, email, phone number, and password -->
 
     <!-- User can use userName, phoneNumber, or Email to log in -->
+
     <TextView
         android:id="@+id/WELCOME_BACK_TEXT"
         android:layout_width="wrap_content"
@@ -52,13 +53,13 @@
         android:layout_marginStart="108dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="108dp"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="32dp"
         android:fontFamily="@font/poppins_extrabold"
         android:text="@string/Welcome_Back"
-        android:textSize="24sp"
+        android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@+id/login_name"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/HELLO_TEXT" />
 

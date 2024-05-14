@@ -41,4 +41,5 @@
     <string name="skip">skip</string>
     <string name="name_duration"><![CDATA[Name&Duration]]></string>
     <string name="date">date</string>
+    <string name="notifications">Notifications</string>
 </resources>
