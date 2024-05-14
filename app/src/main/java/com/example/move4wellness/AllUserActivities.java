@@ -22,17 +22,20 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 
 public class AllUserActivities extends AppCompatActivity {
     TextView userNameInput;
     FirebaseFirestore db;
     DocumentReference userRef;
-    ArrayList<String> aList; //Main and sub items
-    ArrayAdapter<String> adapter;
+    ArrayList<String> aList; //Activity name and durations list
+    ArrayList<String> dList; //List for dates
+    ArrayList<Integer> iList; //List of images
+    int[] imageIDs; //Holds the IDs for the three different images
+    CustomListAdapter adapter; //Custom adapter to make everything look pretty
     ListView listView;
-
-    String UID;
+    String UID; //Holds the unique user ID, which is retrieved from previous activity
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,13 +43,17 @@ public class AllUserActivities extends AppCompatActivity {
         setContentView(R.layout.all_user_activities);
         Intent intent = getIntent();
         UID = intent.getStringExtra("user_UID");
-        //Getting the username text field and list
+        //Getting the username text field
         userNameInput = findViewById(R.id.alluseractivities_username);
+        //Getting the list and initializing relevant variables
         listView = findViewById(R.id.listViewAllActivities);
         aList = new ArrayList<>();
-        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, aList);
+        dList = new ArrayList<>();
+        iList = new ArrayList<>();
+        adapter = new CustomListAdapter(this, aList, dList, iList);
         listView.setAdapter(adapter);
-        //progressBar = findViewById(R.id.progressBar1); Can implement later
+        //Getting the image IDs
+        imageIDs = new int[]{R.drawable.jumprope, R.drawable.weightlifting, R.drawable.abexercise};
         //Initializing user and auth objects
         db = FirebaseFirestore.getInstance();
         userRef = db.collection("users").document(UID);
@@ -72,7 +79,6 @@ public class AllUserActivities extends AppCompatActivity {
 
     //Set all of the items in listView with items from the database
     private void setList() {
-
         //Getting reference to user
         userRef = db.collection("users").document(UID);
         //accessing user activity data
@@ -87,9 +93,12 @@ public class AllUserActivities extends AppCompatActivity {
                         Double duration = documentSnapshot.getDouble("duration");
                         String dateOfExercise = documentSnapshot.getString("date");
                         //Combine the information into one string
-                        String combinedInfo = getCombinedInfo(exerciseName, duration, dateOfExercise);
+                        String dString = String.format("%.0f", duration);
+                        String combinedInfo = exerciseName + ": " + dString + " minutes";
                         //Add to the list
                         aList.add(combinedInfo);
+                        dList.add(dateOfExercise);
+                        iList.add(getEImage(exerciseName));
                     }
                     //Update the list
                     adapter.notifyDataSetChanged();
@@ -97,17 +106,20 @@ public class AllUserActivities extends AppCompatActivity {
             });
         }
 
-    /* Formatting the String so it appears correctly in the textview */
-    private String getCombinedInfo(String exerciseName, Double duration, String dateOfExercise) {
-        String combinedInfo;
-        String spaces = "                     "; //Maxes out spaces so it appears on the far right
-        if(dateOfExercise != null) {
-            combinedInfo = exerciseName + ": " + duration + " minutes" + spaces + dateOfExercise;
+        //Returns the respective image ID for the exercise name
+        int getEImage(String exerciseName) {
+            int ID;
+            if(Objects.equals(exerciseName, "Sit-ups")) {
+                ID = imageIDs[2];
+            }
+            else if(Objects.equals(exerciseName, "Weightlifting")) {
+                ID = imageIDs[1];
+            }
+            else { //Jump-rope
+                ID = imageIDs[0];
+            }
+            return ID;
         }
-        else {
-            combinedInfo = exerciseName + ": " + duration + " minutes";
-        }
-        return combinedInfo;
-    }
+
 
 }

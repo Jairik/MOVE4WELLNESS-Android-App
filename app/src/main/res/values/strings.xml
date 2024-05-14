@@ -39,4 +39,6 @@
     <string name="type_message_here">Type Message Here</string>
     <string name="ready_to_send">Ready to Send</string>
     <string name="skip">skip</string>
+    <string name="name_duration"><![CDATA[Name&Duration]]></string>
+    <string name="date">date</string>
 </resources>
