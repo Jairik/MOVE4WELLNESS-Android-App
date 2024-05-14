@@ -2,15 +2,9 @@ package com.example.move4wellness;
 
 /*Authors: JJ McCauley & Will Lamuth
 * Creation Date: 4/2/24
-* Last Update: 4/28/24
+* Last Update: 5/14/24
 * Notes: This page acts as the initial login/sign-up page
 * Redirects to: Register/login pages */
-
-
-/* ----TEST USER INFORMATION----
-* Email: test@test.com
-* Password: password
-* -------------------------------*/
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -21,7 +15,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-import com.google.firebase.auth.*; //Can refine later
 
 
 public class MainActivity extends AppCompatActivity {

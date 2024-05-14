@@ -1,8 +1,8 @@
 package com.example.move4wellness;
 
 /* Choose event page class
- * Description:
- * Redirects to: */
+ * Description: Allows the user to select an event from the dropdown
+ * Redirects to: Main homepage */
 
 import android.content.Intent;
 import android.os.Bundle;

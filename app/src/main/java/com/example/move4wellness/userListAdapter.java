@@ -13,6 +13,10 @@ import androidx.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
+/* User List Adapter
+Description: Not used, however easily expandable to make it work.
+Intended to clean up the list view for the users on the manager side */
+
 public class userListAdapter extends ArrayAdapter<String> {
 
     private List<String> itemList;

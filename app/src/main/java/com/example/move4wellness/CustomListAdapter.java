@@ -14,6 +14,10 @@ import androidx.annotation.Nullable;
 
 import java.util.List;
 
+/* Custom List Adapter
+Description: Class that adapts the simple list view into a list view
+that holds pictures, a title, and subtitle. Used for the AllUserActivities page */
+
 public class CustomListAdapter extends ArrayAdapter<String> {
 
     private final Activity context;

@@ -1,7 +1,7 @@
 package com.example.move4wellness;
 
 /* Main Homepage Class
- * Description:
+ * Description: Holds various buttons and widgets that redirects to the appropriate pages
  * Redirects to: notification, activity tracker, activity updater, user profile*/
 
 import android.content.Intent;

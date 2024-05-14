@@ -1,8 +1,10 @@
 package com.example.move4wellness;
 
 /* Login page class
-* Description:
-* Redirects to: */
+* Description: Takes in the input from the edit text fields and,
+* if valid, signs the user in
+* Redirects to:  Main homepage or manager home page, dependent on
+* user authority (stored in database) */
 
 import android.content.Intent;
 import android.os.Bundle;

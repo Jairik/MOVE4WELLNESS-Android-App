@@ -37,6 +37,10 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
+/* User Profile Class
+Description: Shows the user profile and relevant options/statistics
+ */
+
 public class UserProfile extends AppCompatActivity {
 
     FirebaseAuth auth;

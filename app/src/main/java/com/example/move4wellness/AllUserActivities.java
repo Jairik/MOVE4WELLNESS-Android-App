@@ -25,6 +25,10 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.Objects;
 
+/* All Users Activity Page
+Description: Holds all of the given user's activities in a list-view
+Redirects to: Either the main home page or manager home page, dependent
+on the isManager boolean in the database */
 
 public class AllUserActivities extends AppCompatActivity {
     TextView userNameInput;

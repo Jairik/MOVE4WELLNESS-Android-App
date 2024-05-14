@@ -1,8 +1,8 @@
 package com.example.move4wellness;
 
 /* Manager see users page class
- * Description:
- * Redirects to: The user that the manager clicks */
+ * Description: Holds all user's usernames in a list view
+ * Redirects to: See all activities page of the user they selected */
 
 import android.content.Intent;
 import android.os.Bundle;
