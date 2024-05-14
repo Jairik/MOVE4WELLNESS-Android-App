@@ -11,10 +11,15 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -53,6 +58,25 @@ public class ManagerGlobalMessage extends AppCompatActivity {
         notiData.put("message", message);
         //Add the new document to the notifications collection
         db.collection("notifications").add(notiData);
+        //Add the new document to each user's notification collection, also updating unseen_notifications
+        db.collection("users").get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                String userUID = document.getId();
+                                Map<String, Object> notificationData = new HashMap<>();
+                                notificationData.put("message", message);
+                                //Add the notification to the user's notifications collection
+                                db.collection("users").document(userUID)
+                                        .collection("notifications").add(notificationData);
+                                //Update unseen_notifications boolean
+                                db.collection("users").document(userUID).update("unseen_notifications", true);
+                            }
+                        }
+                    }
+                });
     }
 
     /* On click for the back button, redirects to manager home page */
