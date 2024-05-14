@@ -40,33 +40,30 @@
 
     <ImageView
         android:id="@+id/imageView7"
-        android:layout_width="102dp"
-        android:layout_height="104dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="21dp"
+        android:layout_width="214dp"
+        android:layout_height="216dp"
         android:adjustViewBounds="true"
         android:background="#00000000"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton6"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintTop_toBottomOf="@+id/textView11"
         app:srcCompat="@drawable/user_profile_pic" />
 
     <TextView
         android:id="@+id/username_profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
+        android:layout_marginBottom="500dp"
         android:fontFamily="@font/poppins_extrabold"
         android:text="Username"
-        android:textSize="20sp"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/imageView7"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.16" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView7"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/button6"
@@ -75,11 +72,12 @@
         android:layout_marginBottom="44dp"
         android:backgroundTint="#FF6262"
         android:fontFamily="@font/poppins_extrabold"
+        android:onClick="onClickLogOut"
         android:text="Log Out"
         android:textSize="18sp"
-        android:onClick="onClickLogOut"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

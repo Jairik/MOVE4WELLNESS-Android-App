@@ -14,9 +14,10 @@
         android:layout_marginBottom="330dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.157"
         app:srcCompat="@drawable/exercise_girl_signup" />
 
     <TextView
@@ -63,7 +64,7 @@
         android:id="@+id/button2"
         android:layout_width="299dp"
         android:layout_height="61dp"
-        android:layout_marginBottom="52dp"
+        android:layout_marginBottom="68dp"
         android:backgroundTint="#AC61F6"
         android:fontFamily="@font/poppins_extrabold"
         android:onClick="onClickHomepage"
