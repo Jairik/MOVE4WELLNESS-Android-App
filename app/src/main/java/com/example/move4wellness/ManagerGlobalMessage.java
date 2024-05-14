@@ -1,8 +1,9 @@
 package com.example.move4wellness;
 
 /* Manager global message page class
- * Description:
- * Redirects to: */
+ * Description: Sends a message to the global notifications collection and each
+ * user's notification collection
+ * Redirects to: Manager Homepage */
 
 import android.content.Intent;
 import android.os.Bundle;

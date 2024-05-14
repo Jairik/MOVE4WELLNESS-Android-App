@@ -1,7 +1,7 @@
 package com.example.move4wellness;
 
 /* Register page class
- * Description:
+ * Description: Creates a new used from the information from the editTextFields, if valid
  * Redirects to: ChooseEvent Screen */
 
 import android.app.ProgressDialog;
