@@ -31,7 +31,6 @@ public class ManagerSeeUsers extends AppCompatActivity {
     ArrayList<String> userNames;
     ArrayList<String> userNameUIDs; //Holds UIDs for all users in userNames
     ArrayAdapter<String> adapter;
-    SearchView searchView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +40,7 @@ public class ManagerSeeUsers extends AppCompatActivity {
         listView = findViewById(R.id.listView);
         userNames = new ArrayList<>();
         userNameUIDs = new ArrayList<>();
-        adapter = new userListAdapter(this, android.R.layout.simple_list_item_1, userNames);
+        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, userNames);
         listView.setAdapter(adapter);
         //Setting up the search view
         /*searchView = findViewById(R.id.searchView);
