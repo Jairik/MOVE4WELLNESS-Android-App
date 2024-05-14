@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.SearchView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -21,6 +22,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class ManagerSeeUsers extends AppCompatActivity {
@@ -28,7 +30,8 @@ public class ManagerSeeUsers extends AppCompatActivity {
     ListView listView;
     ArrayList<String> userNames;
     ArrayList<String> userNameUIDs; //Holds UIDs for all users in userNames
-    ArrayAdapter<String> adapter;
+    userListAdapter adapter;
+    SearchView searchView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,9 +41,26 @@ public class ManagerSeeUsers extends AppCompatActivity {
         listView = findViewById(R.id.listView);
         userNames = new ArrayList<>();
         userNameUIDs = new ArrayList<>();
-        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, userNames);
-        listView.setAdapter(adapter); //ISSUE!!!!
-        //progressBar = findViewById(R.id.progressBar1); Can implement later
+        adapter = new userListAdapter(this, android.R.layout.simple_list_item_1, userNames);
+        listView.setAdapter(adapter);
+        //Setting up the search view
+        searchView = findViewById(R.id.searchView);
+        searchView.clearFocus();
+        searchView.setEnabled(true);
+        searchView.setFocusable(true);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                filterList(newText);
+                return false;
+            }
+        });
         //Initializing user and auth objects
         db = FirebaseFirestore.getInstance();
         setList();
@@ -60,6 +80,16 @@ public class ManagerSeeUsers extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    private void filterList(String text) {
+        List<String> filteredList = new ArrayList<>();
+        for(String item : userNames) {
+            if(item.toLowerCase().contains(text.toLowerCase())) {
+                filteredList.add(item);
+            }
+        }
+        adapter.setFilteredList(filteredList);
     }
 
     //Set all of the items in listView with items from the database
