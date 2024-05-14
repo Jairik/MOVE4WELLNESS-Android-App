@@ -52,9 +52,7 @@ public class ManagerHome extends AppCompatActivity {
         db = FirebaseFirestore.getInstance();
         usersRef = db.collection("users");
         //Pulling data from the database to edit the statistical text fields
-        //setTextFields();
-        String debug = "-99999";
-        totalUsersText.setText(debug); //Even this isn't showing up
+        setTextFields();
     }
 
     //On-click method to seeAllUsers button, redirects to Manager See Users page
@@ -101,8 +99,7 @@ public class ManagerHome extends AppCompatActivity {
                     String averageTotalExercisesString = String.valueOf((numExercises[0]) / numUsers[0]) + " per user";
 
                     //Replacing edit-text fields
-                    //PROBLEM: THIS ISNT SHOWING UP AT ALL
-                    totalUsersText.setText("Testing");
+                    totalUsersText.setText(numUsersString);
                     allTimeTotalText.setText(totalDurationString);
                     allTimeAverageText.setText(averageDurationString);
                     allTimeActivitiesText.setText(totalExercisesString);

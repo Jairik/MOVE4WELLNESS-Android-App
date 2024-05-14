@@ -10,16 +10,18 @@
         android:layout_width="246dp"
         android:layout_height="77dp"
         android:layout_marginStart="179dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="149dp"
+        android:layout_marginBottom="638dp"
         android:fontFamily="@font/poppins_extrabold"
         android:foregroundGravity="center_horizontal"
         android:text="Search Users"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.606"
+        app:layout_constraintHorizontal_bias="0.595"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -27,18 +29,22 @@
         android:id="@+id/searchView"
         android:layout_width="414dp"
         android:layout_height="62dp"
+        android:layout_marginTop="95dp"
         android:layout_marginBottom="1dp"
         app:layout_constraintBottom_toTopOf="@+id/listView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ListView
         android:id="@+id/listView"
-        android:layout_width="409dp"
-        android:layout_height="593dp"
+        android:layout_width="412dp"
+        android:layout_height="573dp"
         android:layout_marginStart="1dp"
+        android:layout_marginTop="158dp"
         android:layout_marginEnd="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
