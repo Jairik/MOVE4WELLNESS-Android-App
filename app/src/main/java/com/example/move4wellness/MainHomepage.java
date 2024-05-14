@@ -29,6 +29,7 @@ public class MainHomepage extends AppCompatActivity {
     TextView usernameText;
     FirebaseAuth auth;
     FirebaseUser user;
+    TextView eventyear;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +39,7 @@ public class MainHomepage extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
         setUsernameText();
+        getEventYear();
     }
 
     //Sets the username at the top of the screen
@@ -106,5 +108,31 @@ public class MainHomepage extends AppCompatActivity {
         Intent intent = new Intent(MainHomepage.this, UpdateActivity.class);
         intent.putExtra("STRING_KEY", "Jump Rope"); //Pass in exercise name
         startActivity(intent);
+    }
+
+    //method grabs which event year the user is participating
+    public void getEventYear(){
+        user = auth.getCurrentUser();
+        //If the user is null (it shouldn't be), return false
+        if(user == null) {
+            return;
+        }
+        //Getting details of the current user & the database
+        String UID = user.getUid();
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        DocumentReference userRef = db.collection("users").document(UID);
+        eventyear = findViewById(R.id.eventyear);
+        userRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if(task.isSuccessful()) {
+                    DocumentSnapshot doc = task.getResult();
+                    if(doc.exists()) {
+                        String year = doc.getString("event");
+                        eventyear.setText(year);
+                    }
+                }
+            }
+        });
     }
 }

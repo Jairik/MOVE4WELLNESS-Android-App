@@ -233,7 +233,7 @@ public class ActivityTracker extends AppCompatActivity implements AdapterView.On
 
                             }
                             //method call to create bar chart with user data
-                            createBarChart(jumprope, weightlifting, situps);
+                            createBarChart(jumprope/2, weightlifting/2, situps/2);
                             //sets average text on ActivityTracker XML
                             setAverage("Jump Rope", jumprope, countJumprope);
                             setAverage("Weightlifting", weightlifting, countWeightlifting);
