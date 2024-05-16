@@ -1,2 +1,2 @@
 # Move4Wellness Android App Development
-Due date: 5/14/24
+Full Android Application with Firebase Fireside Backend. Demos Coming Soon.
