@@ -1,8 +1,9 @@
 # Move4Wellness Android App
 
-Full Android Application for the Move4Wellness Iniative
-Key Features
-* Fireside Realtime Database Integration
+Full Android Application for the Move4Wellness Iniative.
+
+## Key Features:
+* Fireside Database Integration
 * Firebase User Authentication Integration
 * 14 Unique Pages
 * Realtime Charts
@@ -12,6 +13,8 @@ Key Features
     * Send global notifications
 
 ## Demos
+
+---
 
 ![Welcome Screen](Demo_Screenshots/WelcomePage.png)
 
