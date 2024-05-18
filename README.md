@@ -1,6 +1,6 @@
 # Move4Wellness Android App
 
-Full Android Application for the Move4Wellness Iniative, built with Adroid Studio and Firebase APIs.
+Full Android Application for the Move4Wellness Iniative
 Key Features
 * Fireside Realtime Database Integration
 * Firebase User Authentication Integration
